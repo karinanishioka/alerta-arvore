@@ -60,6 +60,7 @@ header h1 span { color: var(--folha); }
 header p { margin: 8px 0 0; color: var(--tinta-2); max-width: 60ch; }
 .aviso { font-size: 13px; background: var(--papel); border: 1px solid var(--linha); border-radius: 6px; padding: 8px 10px; margin-top: 12px; color: var(--tinta-2); }
 .aviso b { color: var(--tinta); }
+.nota-leitura { margin: 8px 0 0; font-size: 13px; color: var(--tinta-2); }
 .sobre-link { margin: 10px 0 0; font-size: 14px; font-weight: 600; }
 .contador { margin: 10px 0 0; font-size: 15px; color: var(--tinta); }
 .contador b { font-family: var(--f-display); font-size: 20px; color: var(--folha); font-variant-numeric: tabular-nums; }
@@ -178,7 +179,7 @@ details.guia ol { padding-left: 20px; margin: 8px 0 0; display: grid; gap: 6px; 
       <p>Autorizações de poda e remoção de árvores publicadas no Diário Oficial da Cidade, no mapa, enquanto ainda dá tempo de a vizinhança se organizar.</p>
       <p class="contador" id="contador" hidden><b id="n-recursos"></b> <span id="rotulo-recursos"></span></p>
       <p class="sobre-link"><a href="sobre.html">Sobre o projeto, o que descobrimos e como pressionar →</a></p>
-      <p class="aviso"><b>Protótipo com dados reais</b> do Diário Oficial de <span id="periodo">—</span>. Endereços, quantidades e prazos são lidos por máquina e podem ter erros: confira sempre a publicação original antes de agir.</p>
+      <p class="nota-leitura">Lido automaticamente do Diário Oficial. Confira sempre a publicação original antes de agir.</p>
     </header>
 
     <section class="numeros" aria-label="Resumo">
@@ -570,7 +571,8 @@ ${esc(servico(p)[0].toUpperCase() + servico(p).slice(1))} de ${esc(qtdTxt(p))} e
 
     if (fc.atualizado_em) document.getElementById("atualizado").textContent = new Date(fc.atualizado_em).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
     const datas = fc.features.map(f => f.properties.data_publicacao).filter(Boolean).sort();
-    if (datas.length) document.getElementById("periodo").textContent = `${fmt(datas[0])} a ${fmt(datas[datas.length - 1])}`;
+    const periodo = document.getElementById("periodo");
+    if (periodo && datas.length) periodo.textContent = `${fmt(datas[0])} a ${fmt(datas[datas.length - 1])}`;
 
     const subsSet = new Set();
     casos = [...fc.features, ...rel.features].map(f => {
