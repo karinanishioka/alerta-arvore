@@ -41,7 +41,10 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           git add site/dados site/feed.xml coletor/brutos
           git add coletor/cache_geocodificacao.json 2>/dev/null || true
-          git diff --cached --quiet || git commit -m "Dados atualizados $(date -u +%F)"
+          git diff --cached --quiet && exit 0
+          git commit -m "Dados atualizados $(date -u +%F)"
+          # traz alterações feitas enquanto o robô rodava (ex.: um arquivo editado no site do GitHub)
+          git pull --rebase -X theirs origin main
           git push
       - name: Montar o site
         run: python site/build.py
