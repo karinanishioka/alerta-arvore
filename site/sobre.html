@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sobre o Alerta Árvore SP</title>
+<meta name="description" content="Por que o Alerta Árvore SP existe, o que descobrimos, seus limites e como pressionar as subprefeituras a publicar dados de manejo de árvores.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: uma coluna de leitura (~66 caracteres), com o mesmo vocabulário visual do mapa. */
+:root {
+  color-scheme: light;
+  --chao: #f3f5ef; --papel: #ffffff; --tinta: #1d2a22; --tinta-2: #55645a; --linha: #d7ddd2;
+  --folha: #2f7d4f; --folha-suave: #e2f0e6; --corte: #c2412d;
+  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-texto: "Public Sans", "Segoe UI", system-ui, sans-serif;
+  --f-dado: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --chao: #121814; --papel: #19211b; --tinta: #e6ece6; --tinta-2: #9faea3; --linha: #2c3830;
+  --folha: #6cc28e; --folha-suave: #1d3326; --corte: #f0806d; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --chao: #121814; --papel: #19211b; --tinta: #e6ece6; --tinta-2: #9faea3; --linha: #2c3830;
+  --folha: #6cc28e; --folha-suave: #1d3326; --corte: #f0806d; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; background: var(--chao); color: var(--tinta); font-family: var(--f-texto); font-size: 17px; line-height: 1.6; }
+a { color: var(--folha); }
+:focus-visible { outline: 2px solid var(--folha); outline-offset: 2px; }
+img { max-width: 100%; display: block; }
+.pagina { max-width: 700px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+.voltar { font-size: 15px; text-decoration: none; display: inline-block; margin-bottom: 24px; }
+h1 { font-family: var(--f-display); font-weight: 800; font-size: clamp(32px, 6vw, 44px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 12px; text-wrap: balance; }
+h1 span { color: var(--folha); }
+.lede { font-size: 19px; color: var(--tinta-2); margin: 0 0 28px; }
+h2 { font-family: var(--f-display); font-weight: 700; font-size: 24px; line-height: 1.15; margin: 44px 0 10px; text-wrap: balance; }
+p, li { max-width: 66ch; }
+p { margin: 0 0 14px; }
+ul, ol { padding-left: 22px; display: grid; gap: 6px; margin: 0 0 14px; }
+
+figure { margin: 0 0 20px; }
+figure img { width: 100%; max-height: 520px; object-fit: cover; object-position: center 92%; border-radius: 8px; }
+figcaption { font-size: 13px; color: var(--tinta-2); margin-top: 6px; }
+
+.numeros { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; background: var(--papel); border: 1px solid var(--linha); border-left: 4px solid var(--corte); border-radius: 8px; padding: 18px 20px; margin: 16px 0; }
+.numeros b { display: block; font-family: var(--f-display); font-size: 38px; line-height: 1; color: var(--corte); font-variant-numeric: tabular-nums; }
+.numeros span { font-size: 14px; color: var(--tinta-2); }
+
+details { background: var(--papel); border: 1px solid var(--linha); border-radius: 8px; margin: 12px 0 16px; }
+details summary { cursor: pointer; padding: 12px 16px; font-weight: 600; }
+details[open] summary { border-bottom: 1px solid var(--linha); }
+.tabela { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; min-width: 520px; }
+th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--linha); vertical-align: top; }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--tinta-2); font-weight: 600; }
+td.num { font-family: var(--f-dado); font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+.dias0 { color: var(--corte); font-weight: 600; }
+.nota { font-size: 14px; color: var(--tinta-2); }
+.detalhe-modelo { padding: 14px 16px; display: grid; gap: 10px; }
+.detalhe-modelo label { font-size: 13px; font-weight: 600; color: var(--tinta-2); }
+select { font: inherit; font-size: 15px; padding: 7px 10px; border-radius: 6px; border: 1px solid var(--linha); background: var(--chao); color: var(--tinta); max-width: 100%; }
+textarea { font-family: var(--f-dado); font-size: 13px; line-height: 1.5; width: 100%; min-height: 300px; padding: 12px; border-radius: 6px; border: 1px solid var(--linha); background: var(--chao); color: var(--tinta); resize: vertical; }
+.botao { font: inherit; font-size: 15px; font-weight: 600; background: var(--folha); color: var(--chao); border: 0; border-radius: 6px; padding: 9px 16px; cursor: pointer; justify-self: start; }
+
+.autora { display: flex; gap: 18px; align-items: center; background: var(--papel); border: 1px solid var(--linha); border-radius: 8px; padding: 16px; }
+.autora img { width: 84px; height: 84px; border-radius: 50%; flex: none; object-fit: cover; }
+.autora div { min-width: 0; }
+.autora p { margin: 0 0 6px; }
+.autora p:last-child { margin: 0; }
+.email { font-family: var(--f-dado); font-size: 15px; user-select: all; overflow-wrap: anywhere; }
+.contador { background: var(--papel); border: 1px solid var(--linha); border-left: 4px solid var(--folha); border-radius: 8px; padding: 14px 18px; margin: 0 0 16px; }
+.contador b { font-family: var(--f-display); font-size: 34px; line-height: 1; color: var(--folha); display: block; font-variant-numeric: tabular-nums; }
+.copiar-email { font: inherit; font-size: 13px; border: 1px solid var(--linha); background: var(--chao); color: var(--tinta); border-radius: 6px; padding: 3px 9px; cursor: pointer; margin-left: 6px; }
+@media (max-width: 480px) { .autora { flex-direction: column; align-items: flex-start; } }
+</style>
+</head>
+<body>
+<main class="pagina">
+  <a class="voltar" href="./">← Voltar ao mapa</a>
+  <h1>Sobre o Alerta Árvore <span>SP</span></h1>
+  <p class="lede">Para que a vizinhança saiba de uma poda ou remoção de árvore enquanto ainda dá tempo de agir.</p>
+
+  <h2>Por que existe</h2>
+  <figure>
+    <img src="img/padre-pericles.jpg" alt="Tocos de árvores recém-cortadas na calçada do Largo Padre Péricles, com troncos ao lado e prédios ao fundo" width="800" height="1066" loading="lazy">
+    <figcaption>Largo Padre Péricles, outubro de 2026.</figcaption>
+  </figure>
+  <p>Em outubro de 2026, oito árvores saudáveis foram cortadas numa só manhã no Largo Padre Péricles. Segundo a Guarda Civil Metropolitana, o corte veio de um processo aberto depois que alguém se acidentou nas raízes da calçada, e que tramitou por cerca de um ano e meio. Ninguém da vizinhança soube até a motosserra chegar.</p>
+  <p>Essas decisões são públicas, mas ficam escondidas no Diário Oficial, entre milhares de outras publicações. O Alerta lê o Diário todos os dias e mostra no mapa onde há poda ou remoção autorizada e até quando dá para recorrer.</p>
+
+  <h2>O que descobrimos</h2>
+  <p>A Subprefeitura do Jabaquara publica em dados abertos a planilha em que registra quando cada serviço foi executado. Cruzamos essa planilha com o Diário Oficial, caso a caso.</p>
+  <div class="numeros">
+    <div><b id="n-total">14</b><span>remoções executadas até 6 dias depois de publicadas</span></div>
+    <div><b id="n-mesmo-dia">7</b><span>no mesmo dia da publicação ou antes</span></div>
+    <div><b id="n-recurso">0</b><span>de <span id="n-lidos">25</span> despachos mencionam prazo de recurso</span></div>
+  </div>
+  <p>Quando o corte acontece junto com a publicação, o aviso deixa de servir para o que existe. As outras 31 subprefeituras não publicam esses dados, então não sabemos como é nelas.</p>
+  <details>
+    <summary>Ver os casos e como verificamos</summary>
+    <div class="tabela" role="region" aria-label="Remoções confirmadas no Jabaquara" tabindex="0">
+      <table>
+        <thead><tr><th>Endereço</th><th>Espécie</th><th>Publicado</th><th>Executado</th><th>Dias</th><th></th></tr></thead>
+        <tbody id="linhas"><tr><td colspan="6" class="nota">Carregando…</td></tr></tbody>
+      </table>
+    </div>
+    <p class="nota" style="padding: 12px 16px 4px;">Só contamos casos em que a publicação existe no Diário na data da planilha, o endereço confere e a linha registra apenas a remoção. <span id="n-secas">4</span> das árvores estavam registradas como secas. Fonte: <a href="https://dados.prefeitura.sp.gov.br/dataset/planilha-de-manejo-arboreo" target="_blank" rel="noopener">Planilha de Manejo Arbóreo, Subprefeitura Jabaquara</a> (atualizada até dezembro de 2025).</p>
+  </details>
+
+  <h2>Limites</h2>
+  <ul>
+    <li>A leitura é automática e pode errar endereço, quantidade ou prazo. Confira sempre a publicação original.</li>
+    <li>Decisões judiciais, como a do Largo Padre Péricles, não aparecem no mapa.</li>
+    <li>Não sabemos se houve recurso nem quando a árvore foi de fato cortada.</li>
+    <li>Nomes de moradores e de responsáveis técnicos são ocultados.</li>
+  </ul>
+
+  <h2>Como pressionar</h2>
+  <p class="contador" id="contador" hidden><b id="n-recursos"></b><span id="rotulo-recursos"></span>. Protocolou um recurso? Mande uma foto da via carimbada para o e-mail do projeto.</p>
+  <ol>
+    <li><b>Peça os dados à sua subprefeitura</b> pela Lei de Acesso à Informação, no <a href="https://esic.prefeitura.sp.gov.br/" target="_blank" rel="noopener">e-SIC da Prefeitura</a>. A resposta deve vir em até 20 dias.</li>
+    <li><b>Leve o tema ao CADES Regional</b> e ao Conselho Participativo do seu bairro.</li>
+    <li><b>Procure vereadores da sua região</b> e peça um requerimento de informação.</li>
+  </ol>
+  <details>
+    <summary>Modelo de pedido pela Lei de Acesso à Informação</summary>
+    <div class="detalhe-modelo">
+      <label for="sub">Sua subprefeitura</label>
+      <select id="sub"></select>
+      <textarea id="texto" readonly aria-label="Texto do pedido"></textarea>
+      <button class="botao" id="copiar" type="button">Copiar texto</button>
+    </div>
+  </details>
+
+  <h2>Quem faz</h2>
+  <div class="autora">
+    <img src="img/karina.png" alt="Karina Nishioka" width="84" height="84">
+    <div>
+      <p>O Alerta Árvore SP é um projeto independente criado por <b>Karina Nishioka</b>. O código é aberto.</p>
+      <p>Erros, relatos ou vontade de ajudar: <span class="email" id="email">alertaarvoresp@gmail.com</span><button class="copiar-email" id="copiar-email" type="button">Copiar</button></p>
+    </div>
+  </div>
+</main>
+
+<script>
+(function () {
+  const SUBS = ["Aricanduva/Formosa/Carrão","Butantã","Campo Limpo","Capela do Socorro","Casa Verde/Cachoeirinha","Cidade Ademar","Cidade Tiradentes","Ermelino Matarazzo","Freguesia/Brasilândia","Guaianases","Ipiranga","Itaim Paulista","Itaquera","Jabaquara","Jaçanã/Tremembé","Lapa","M'Boi Mirim","Mooca","Parelheiros","Penha","Perus/Anhanguera","Pinheiros","Pirituba/Jaraguá","Santana/Tucuruvi","Santo Amaro","São Mateus","São Miguel Paulista","Sapopemba","Sé","Vila Maria/Vila Guilherme","Vila Mariana","Vila Prudente"];
+  const sel = document.getElementById("sub"), txt = document.getElementById("texto");
+  SUBS.forEach(s => { const o = document.createElement("option"); o.value = o.textContent = s; sel.append(o); });
+  sel.value = "Lapa";
+  const modelo = s => `À Subprefeitura ${s}
+
+Com base na Lei Federal nº 12.527/2011 (Lei de Acesso à Informação), artigos 8º e 10, e no Decreto Municipal nº 53.623/2012, solicito:
+
+1. A planilha ou base de dados usada por esta Subprefeitura para controlar os serviços de manejo arbóreo (poda, remoção e transplante) nos últimos 12 meses, em formato aberto (CSV ou planilha), com, para cada solicitação: número do processo SEI e da ordem de serviço; endereço; espécie e quantidade de árvores; serviço e decisão; data de publicação no Diário Oficial da Cidade; data de execução.
+
+2. Quantos recursos de munícipes contra podas e remoções foram recebidos nesse período, e quantos foram acolhidos.
+
+3. Se e quando esta Subprefeitura pretende publicar essa base no Portal de Dados Abertos da Prefeitura, com atualização periódica, como já faz a Subprefeitura Jabaquara ("Planilha de Manejo Arbóreo").
+
+Caso alguma informação não exista nesse formato, peço que seja enviada como é mantida pela Subprefeitura.
+
+Atenciosamente,`;
+  const atualizar = () => { txt.value = modelo(sel.value); };
+  sel.addEventListener("change", atualizar); atualizar();
+
+  function copiar(botao, texto, alvo, rotulo) {
+    const selecionar = () => { const r = document.createRange(); r.selectNodeContents(alvo); const s = getSelection(); s.removeAllRanges(); s.addRange(r); if (alvo.select) alvo.select(); botao.textContent = "Selecionado: use Ctrl+C"; };
+    if (navigator.clipboard) navigator.clipboard.writeText(texto).then(() => { botao.textContent = "Copiado"; setTimeout(() => botao.textContent = rotulo, 2000); }, selecionar);
+    else selecionar();
+  }
+  document.getElementById("copiar").addEventListener("click", e => copiar(e.currentTarget, txt.value, txt, "Copiar texto"));
+  document.getElementById("copiar-email").addEventListener("click", e => { const el = document.getElementById("email"); copiar(e.currentTarget, el.textContent, el, "Copiar"); });
+
+  fetch("dados/contador.json").then(r => r.json()).then(c => {
+    const n = +c.recursos || 0;
+    if (n > 0) {
+      document.getElementById("n-recursos").textContent = n.toLocaleString("pt-BR");
+      document.getElementById("rotulo-recursos").textContent = n === 1 ? "recurso de vizinho em defesa das árvores" : "recursos de vizinhos em defesa das árvores";
+      document.getElementById("contador").hidden = false;
+    }
+  }).catch(() => {});
+  const fmt = iso => iso ? iso.split("-").reverse().join("/") : "";
+  fetch("dados/prazo_jabaquara.json").then(r => r.json()).then(d => {
+    const conf = d.casos.filter(c => c.confirmado).sort((a, b) => a.dias - b.dias || a.publicacao.localeCompare(b.publicacao));
+    document.getElementById("n-total").textContent = conf.length;
+    document.getElementById("n-mesmo-dia").textContent = conf.filter(c => c.dias <= 0).length;
+    document.getElementById("n-recurso").textContent = d.textos_com_prazo_de_recurso;
+    document.getElementById("n-lidos").textContent = d.textos_lidos;
+    const secas = conf.filter(c => /seca/i.test(c.especie || "")).length;
+    document.getElementById("n-secas").textContent = secas === 1 ? "Uma" : secas;
+    const tb = document.getElementById("linhas"); tb.replaceChildren();
+    const cel = (t, cls) => { const td = document.createElement("td"); if (cls) td.className = cls; td.textContent = t; return td; };
+    for (const c of conf) {
+      const tr = document.createElement("tr");
+      const exe = (c.execucao_planilha.match(/\d{1,2}\/\d{1,2}\/\d{2,4}/) || [""])[0];
+      tr.append(cel(c.endereco), cel(c.especie || "—"), cel(fmt(c.publicacao), "num"), cel(exe, "num"),
+        cel(c.dias <= 0 ? (c.dias === 0 ? "mesmo dia" : `${-c.dias} antes`) : `${c.dias}`, "num" + (c.dias <= 0 ? " dias0" : "")));
+      const td = document.createElement("td");
+      if (c.url) { const a = document.createElement("a"); a.href = c.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Diário"; td.append(a); }
+      tr.append(td); tb.append(tr);
+    }
+  }).catch(() => { document.getElementById("linhas").innerHTML = '<tr><td colspan="6" class="nota">Não foi possível carregar a tabela agora.</td></tr>'; });
+})();
+</script>
+</body>
+</html>

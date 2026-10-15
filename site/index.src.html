@@ -1,0 +1,605 @@
+<title>Alerta Árvore SP</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Autorizações de poda e remoção de árvores publicadas no Diário Oficial de São Paulo, no mapa, a tempo de a vizinhança se organizar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>/*LEAFLET_CSS*/</style>
+<style>
+/* Layout: painel de avisos à esquerda (prazos abertos, filtros, lista), mapa da cidade à direita; no celular, mapa em cima. */
+:root {
+  --chao: #f3f5ef;        /* fundo: papel com leve tom de folha */
+  --papel: #ffffff;
+  --tinta: #1d2a22;       /* texto: verde-casca muito escuro */
+  --tinta-2: #55645a;
+  --linha: #d7ddd2;
+  --folha: #2f7d4f;       /* acento: verde-folha */
+  --folha-suave: #e2f0e6;
+  --corte: #c2412d;       /* remoção */
+  --corte-suave: #fbe5e0;
+  --poda: #2f7d4f;        /* poda: verde (a árvore fica) */
+  --poda-suave: #e2f0e6;
+  --prazo: #b7791f;       /* prazo de recurso aberto */
+  --prazo-suave: #fbefd9;
+  --negado: #8a958d;
+  --relato: #5b5bd6;
+  --mapa-fundo: #e9ede4;
+  --mapa-sub: #c5cdbf;
+  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-texto: "Public Sans", "Segoe UI", system-ui, sans-serif;
+  --f-dado: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --chao: #121814; --papel: #19211b; --tinta: #e6ece6; --tinta-2: #9faea3;
+  --linha: #2c3830; --folha: #6cc28e; --folha-suave: #1d3326; --corte: #f0806d; --corte-suave: #3a1f1a;
+  --poda: #6cc28e; --poda-suave: #1d3326; --prazo: #e6b35c; --prazo-suave: #3a2d16; --negado: #6f7a72;
+  --relato: #a3a3ff; --mapa-fundo: #161d18; --mapa-sub: #34423a; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --chao: #121814; --papel: #19211b; --tinta: #e6ece6; --tinta-2: #9faea3;
+  --linha: #2c3830; --folha: #6cc28e; --folha-suave: #1d3326; --corte: #f0806d; --corte-suave: #3a1f1a;
+  --poda: #6cc28e; --poda-suave: #1d3326; --prazo: #e6b35c; --prazo-suave: #3a2d16; --negado: #6f7a72;
+  --relato: #a3a3ff; --mapa-fundo: #161d18; --mapa-sub: #34423a; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; }
+body { background: var(--chao); color: var(--tinta); font-family: var(--f-texto); font-size: 15px; line-height: 1.5; margin: 0; }
+a { color: var(--folha); }
+:focus-visible { outline: 2px solid var(--folha); outline-offset: 2px; }
+
+.app { display: grid; grid-template-columns: minmax(340px, 460px) 1fr; height: 100%; }
+.painel { overflow-y: auto; border-right: 1px solid var(--linha); background: var(--chao);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: 16px; padding-block: 20px 32px;
+  display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.painel > * { flex-shrink: 0; }
+.mapa-wrap { position: relative; min-width: 0; }
+#mapa { position: absolute; inset: 0; background: var(--mapa-fundo); }
+
+header h1 { font-family: var(--f-display); font-weight: 800; font-size: 30px; line-height: 1.05; letter-spacing: -0.02em; margin: 0; }
+header h1 span { color: var(--folha); }
+header p { margin: 8px 0 0; color: var(--tinta-2); max-width: 60ch; }
+.aviso { font-size: 13px; background: var(--papel); border: 1px solid var(--linha); border-radius: 6px; padding: 8px 10px; margin-top: 12px; color: var(--tinta-2); }
+.aviso b { color: var(--tinta); }
+.sobre-link { margin: 10px 0 0; font-size: 14px; font-weight: 600; }
+.contador { margin: 10px 0 0; font-size: 15px; color: var(--tinta); }
+.contador b { font-family: var(--f-display); font-size: 20px; color: var(--folha); font-variant-numeric: tabular-nums; }
+.agir-email { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-size: 14px; }
+.agir-email code { font-family: var(--f-dado); font-size: 13px; background: var(--papel); border: 1px solid var(--linha); border-radius: 4px; padding: 2px 6px; user-select: all; overflow-wrap: anywhere; }
+.agir-email button { font: inherit; font-size: 13px; border: 1px solid var(--linha); background: var(--papel); color: var(--tinta); border-radius: 6px; padding: 3px 9px; cursor: pointer; }
+
+.numeros { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--linha); border: 1px solid var(--linha); border-radius: 8px; overflow: hidden; }
+.numeros button { all: unset; cursor: pointer; background: var(--papel); padding: 10px 12px; display: block; }
+.numeros button:focus-visible { outline: 2px solid var(--folha); outline-offset: -2px; }
+.numeros b { display: block; font-family: var(--f-display); font-size: 26px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.numeros span { font-size: 12px; color: var(--tinta-2); }
+.numeros .aberto b { color: var(--prazo); }
+.numeros .aberto { background: var(--prazo-suave); }
+
+.filtros { display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; }
+.rot { width: 100%; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--tinta-2); font-weight: 600; margin-top: 6px; }
+.chip { border: 1px solid var(--linha); background: var(--papel); color: var(--tinta); border-radius: 999px; padding: 5px 12px; font: inherit; font-size: 13px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--tinta); color: var(--chao); border-color: var(--tinta); }
+select, input[type=search] { font: inherit; font-size: 14px; padding: 7px 10px; border-radius: 6px; border: 1px solid var(--linha); background: var(--papel); color: var(--tinta); min-width: 0; flex: 1 1 150px; }
+
+.contagem { font-size: 13px; color: var(--tinta-2); margin: 0; }
+.lista { display: flex; flex-direction: column; gap: 10px; }
+.caso { background: var(--papel); border: 1px solid var(--linha); border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; gap: 5px; cursor: pointer; scroll-margin: 12px; }
+.caso.com-prazo { border-left: 4px solid var(--prazo); }
+.caso:hover { border-color: var(--tinta-2); }
+.caso.ativo { border-color: var(--folha); box-shadow: 0 0 0 2px var(--folha-suave); }
+.caso .topo { display: flex; gap: 6px; align-items: baseline; flex-wrap: wrap; }
+.caso .data { font-family: var(--f-dado); font-size: 12px; color: var(--tinta-2); margin-left: auto; }
+.caso h3 { font-family: var(--f-display); font-size: 17px; font-weight: 700; margin: 0; line-height: 1.25; text-wrap: balance; overflow-wrap: anywhere; }
+.caso .meta { font-size: 13px; color: var(--tinta-2); overflow-wrap: anywhere; }
+.caso .meta i { font-style: italic; }
+.tag { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; padding: 2px 7px; border-radius: 4px; }
+.tag.remocao { background: var(--corte-suave); color: var(--corte); }
+.tag.poda, .tag.transplante { background: var(--poda-suave); color: var(--poda); }
+.tag.manejo, .tag.outro { background: var(--chao); color: var(--tinta-2); border: 1px solid var(--linha); }
+.tag.relato { background: var(--papel); color: var(--relato); border: 1px solid var(--relato); }
+.decisao { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--tinta-2); }
+.decisao.indeferido { text-decoration: line-through; }
+.prazo { font-size: 13px; font-weight: 600; color: var(--prazo); }
+.prazo.encerrado { color: var(--tinta-2); font-weight: 400; }
+.sei { font-family: var(--f-dado); font-size: 12px; }
+.detalhe { display: none; font-size: 13px; border-top: 1px dashed var(--linha); padding-top: 8px; margin-top: 2px; }
+.caso.ativo .detalhe { display: block; }
+.detalhe blockquote { margin: 0 0 8px; padding-left: 10px; border-left: 2px solid var(--linha); color: var(--tinta-2); max-height: 180px; overflow: auto; overflow-wrap: anywhere; }
+.acoes { display: flex; flex-wrap: wrap; gap: 8px; }
+.acoes a, .acoes button { font: inherit; font-size: 13px; border: 1px solid var(--linha); background: var(--chao); color: var(--tinta); border-radius: 6px; padding: 5px 10px; text-decoration: none; cursor: pointer; }
+.mais { font: inherit; font-size: 14px; border: 1px solid var(--linha); background: var(--papel); color: var(--tinta); border-radius: 8px; padding: 10px; cursor: pointer; }
+.vazio { color: var(--tinta-2); font-size: 14px; padding: 16px; border: 1px dashed var(--linha); border-radius: 8px; margin: 0; }
+
+details.guia { background: var(--papel); border: 1px solid var(--linha); border-radius: 8px; padding: 10px 14px; font-size: 14px; }
+details.guia summary { font-family: var(--f-display); font-weight: 700; cursor: pointer; }
+details.guia ol { padding-left: 20px; margin: 8px 0 0; display: grid; gap: 6px; }
+.rodape { font-size: 12px; color: var(--tinta-2); margin: 0; }
+
+.legenda { position: absolute; z-index: 500; right: max(12px, env(safe-area-inset-right, 0px)); bottom: 12px; background: var(--papel); border: 1px solid var(--linha); border-radius: 8px; padding: 8px 10px; font-size: 12px; display: grid; gap: 4px; }
+.legenda span { display: flex; align-items: center; gap: 6px; }
+.legenda i { width: 11px; height: 11px; border-radius: 50%; display: inline-block; flex: none; }
+.leaflet-container { font-family: var(--f-texto); background: var(--mapa-fundo); }
+
+@media (max-width: 760px) {
+  .app { grid-template-columns: 1fr; grid-template-rows: 46vh auto; height: auto; }
+  .mapa-wrap { order: -1; height: 46vh; }
+  .painel { border-right: 0; overflow: visible; padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  header h1 { font-size: 26px; }
+  .legenda { display: none; }
+}
+/* Botão de ação no caso e tela "O que fazer" */
+.agir-btn { font: inherit; font-size: 14px; font-weight: 600; background: var(--prazo); color: var(--papel); border: 0; border-radius: 6px; padding: 8px 12px; cursor: pointer; justify-self: start; align-self: flex-start; margin-top: 2px; }
+.agir { position: fixed; inset: 0; z-index: 2000; background: color-mix(in srgb, var(--tinta) 45%, transparent); display: flex; justify-content: flex-end; }
+.agir-folha { background: var(--chao); width: min(640px, 100%); height: 100%; overflow-y: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: calc(16px + env(safe-area-inset-top, 0px)) calc(40px + env(safe-area-inset-bottom, 0px)); display: flex; flex-direction: column; gap: 16px; }
+.agir-topo { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.agir-topo h2 { font-family: var(--f-display); font-size: 24px; line-height: 1.15; margin: 0; text-wrap: balance; overflow-wrap: anywhere; }
+.agir-fechar { font: inherit; font-size: 14px; border: 1px solid var(--linha); background: var(--papel); color: var(--tinta); border-radius: 6px; padding: 6px 10px; cursor: pointer; flex: none; }
+.agir-caso { background: var(--papel); border: 1px solid var(--linha); border-left: 4px solid var(--prazo); border-radius: 8px; padding: 12px 14px; font-size: 14px; display: grid; gap: 2px; overflow-wrap: anywhere; }
+.agir-caso b { font-size: 16px; }
+.agir-prazo { color: var(--prazo); font-weight: 600; }
+.passos { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; counter-reset: passo; }
+.passos li { counter-increment: passo; display: grid; grid-template-columns: 28px 1fr; gap: 10px; font-size: 15px; }
+.passos li::before { content: counter(passo); font-family: var(--f-display); font-weight: 700; width: 26px; height: 26px; border-radius: 50%; background: var(--tinta); color: var(--chao); display: grid; place-items: center; font-size: 14px; }
+.passos li > div { min-width: 0; }
+.passos .quando { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--prazo); font-weight: 600; }
+.agir-bloco { background: var(--papel); border: 1px solid var(--linha); border-radius: 8px; padding: 14px; display: grid; gap: 10px; }
+.agir-bloco h3 { font-family: var(--f-display); font-size: 18px; margin: 0; }
+.agir-bloco p { margin: 0; font-size: 14px; color: var(--tinta-2); }
+.agir-bloco label { font-size: 14px; display: flex; gap: 8px; align-items: flex-start; }
+.agir-bloco input[type=text] { font: inherit; font-size: 14px; padding: 7px 10px; border-radius: 6px; border: 1px solid var(--linha); background: var(--chao); color: var(--tinta); width: 100%; }
+.agir-bloco textarea { font-family: var(--f-dado); font-size: 12.5px; line-height: 1.5; width: 100%; min-height: 260px; padding: 10px; border-radius: 6px; border: 1px solid var(--linha); background: var(--chao); color: var(--tinta); resize: vertical; }
+.agir-campos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.agir-botoes { display: flex; flex-wrap: wrap; gap: 8px; }
+.agir-botoes button { font: inherit; font-size: 14px; font-weight: 600; border-radius: 6px; padding: 8px 14px; cursor: pointer; border: 1px solid var(--linha); background: var(--chao); color: var(--tinta); }
+.agir-botoes button.principal { background: var(--folha); border-color: var(--folha); color: var(--papel); }
+.agir-aviso { font-size: 12px; color: var(--tinta-2); margin: 0; }
+@media (max-width: 480px) { .agir-campos { grid-template-columns: 1fr; } }
+
+/* Impressão: só o documento escolhido */
+#impressao { display: none; }
+@media print {
+  body.imprimindo > *:not(#impressao) { display: none !important; }
+  body.imprimindo #impressao { display: block; color: #000; background: #fff; font-family: Georgia, "Times New Roman", serif; font-size: 12pt; line-height: 1.5; }
+  #impressao pre { white-space: pre-wrap; font-family: inherit; margin: 0; }
+  #impressao h1 { font-size: 15pt; margin: 0 0 6pt; }
+  #impressao table { width: 100%; border-collapse: collapse; margin-top: 10pt; }
+  #impressao th, #impressao td { border: 1px solid #000; padding: 6pt; text-align: left; font-size: 11pt; }
+  #impressao td { height: 22pt; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="app">
+  <aside class="painel">
+    <header>
+      <h1>Alerta Árvore <span>SP</span></h1>
+      <p>Autorizações de poda e remoção de árvores publicadas no Diário Oficial da Cidade, no mapa, enquanto ainda dá tempo de a vizinhança se organizar.</p>
+      <p class="contador" id="contador" hidden><b id="n-recursos"></b> <span id="rotulo-recursos"></span></p>
+      <p class="sobre-link"><a href="sobre.html">Sobre o projeto, o que descobrimos e como pressionar →</a></p>
+      <p class="aviso"><b>Protótipo com dados reais</b> do Diário Oficial de <span id="periodo">—</span>. Endereços, quantidades e prazos são lidos por máquina e podem ter erros: confira sempre a publicação original antes de agir.</p>
+    </header>
+
+    <section class="numeros" aria-label="Resumo">
+      <button type="button" class="aberto" data-atalho="prazo"><b id="n-abertos">0</b><span>com prazo de recurso aberto</span></button>
+      <button type="button" data-atalho="remocao"><b id="n-remocoes">0</b><span>remoções autorizadas</span></button>
+      <button type="button" data-atalho="todas"><b id="n-arvores">0</b><span>árvores citadas</span></button>
+    </section>
+
+    <section class="filtros" aria-label="Filtros">
+      <span class="rot">Situação</span>
+      <button class="chip" data-grupo="sit" data-v="todas" aria-pressed="true">Todas</button>
+      <button class="chip" data-grupo="sit" data-v="prazo" aria-pressed="false">Prazo aberto</button>
+      <button class="chip" data-grupo="sit" data-v="autorizada" aria-pressed="false">Autorizadas</button>
+      <button class="chip" data-grupo="sit" data-v="negada" aria-pressed="false">Negadas</button>
+      <span class="rot">Intervenção</span>
+      <button class="chip" data-grupo="tipo" data-v="todos" aria-pressed="true">Todas</button>
+      <button class="chip" data-grupo="tipo" data-v="remocao" aria-pressed="false">Remoção</button>
+      <button class="chip" data-grupo="tipo" data-v="poda" aria-pressed="false">Poda</button>
+      <span class="rot">Onde</span>
+      <select id="f-sub" aria-label="Subprefeitura"><option value="">Todas as subprefeituras</option></select>
+      <select id="f-local" aria-label="Tipo de área">
+        <option value="">Rua e área particular</option>
+        <option value="publica">Só em rua, praça ou parque</option>
+        <option value="interna">Só em área particular</option>
+      </select>
+      <input id="f-busca" type="search" placeholder="Rua, espécie ou nº do processo" aria-label="Buscar">
+    </section>
+
+    <p class="contagem" id="contagem" aria-live="polite"></p>
+    <section class="lista" id="lista"></section>
+
+
+    <p class="rodape">Fonte: Diário Oficial da Cidade de São Paulo. Pontos tracejados ficam no centro da subprefeitura porque a publicação não trouxe endereço. Prazos em dias úteis não descontam feriados. Atualizado em <span id="atualizado">—</span>.</p>
+  </aside>
+
+  <div class="mapa-wrap">
+    <div id="mapa" role="region" aria-label="Mapa dos casos"></div>
+    <div class="legenda" aria-hidden="true">
+      <span><i style="background:var(--corte)"></i>Remoção</span>
+      <span><i style="background:var(--poda)"></i>Poda</span>
+      <span><i style="border:3px solid var(--prazo)"></i>Prazo de recurso aberto</span>
+      <span><i style="border:2px solid var(--negado)"></i>Pedido negado</span>
+      <span><i style="border:2px dashed var(--tinta-2)"></i>Local aproximado</span>
+    </div>
+  </div>
+</div>
+
+<div class="agir" id="agir" hidden role="dialog" aria-modal="true" aria-labelledby="agir-titulo"></div>
+<div id="impressao"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script>
+(function () {
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const HOJE = new Date(); HOJE.setHours(0, 0, 0, 0);
+  const fmt = iso => iso ? new Date(iso + "T12:00:00").toLocaleDateString("pt-BR") : "sem data";
+  const fmtCurto = iso => new Date(iso + "T12:00:00").toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" });
+  const TIPO_NOME = { remocao: "Remoção", poda: "Poda", transplante: "Transplante", manejo: "Manejo em obra" };
+  const DEC_NOME = { deferido: "autorizada", indeferido: "negada", comunicado: "comunicada", executado: "executada" };
+  const LOCAL_NOME = { publica: "rua, praça ou parque", interna: "área particular" };
+  const POR_PAGINA = 60;
+
+  let casos = [], subpLayer, marcadores = {}, ativo = null, mostrar = POR_PAGINA;
+  const filtro = { sit: "todas", tipo: "todos", sub: "", local: "", q: "" };
+
+  const mapa = L.map("mapa", { zoomControl: true, preferCanvas: true }).setView([-23.62, -46.62], 10);
+  const tiles = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19, attribution: "© OpenStreetMap", opacity: 0.85 });
+  let falhas = 0;
+  tiles.on("tileerror", () => { if (++falhas > 4) mapa.removeLayer(tiles); });
+  tiles.addTo(mapa);
+
+  function prazoInfo(p) {
+    if (!p.prazo_ate) return null;
+    const fim = new Date(p.prazo_ate + "T23:59:00");
+    const dias = Math.ceil((fim - HOJE) / 864e5) - 1;
+    const tipoDias = p.prazo_dias_uteis ? "úteis" : "corridos";
+    if (dias >= 0) return { aberto: true, dias, txt: (dias === 0 ? "Recurso: último dia hoje" : `Recurso até ${fmtCurto(p.prazo_ate)}`) + ` · ${p.prazo_recurso_dias} dias ${tipoDias} da publicação` };
+    return { aberto: false, txt: `Prazo de recurso encerrado em ${fmt(p.prazo_ate)}` };
+  }
+
+  const ehRelato = p => p.origem === "relato";
+  const cor = p => ehRelato(p) ? css("--relato") : p.decisao === "indeferido" ? css("--negado") : p.tipo === "poda" ? css("--poda") : p.tipo === "remocao" ? css("--corte") : css("--tinta-2");
+  const raio = p => 5 + Math.min(12, Math.sqrt(p.arvores || 1) * 2);
+
+  function titulo(p) {
+    const n = p.arvores ? `${p.arvores} árvore${p.arvores > 1 ? "s" : ""}` : "Árvores";
+    const onde = p.endereco || (p.subprefeitura ? `endereços em anexo · ${p.subprefeitura}` : "local não identificado");
+    return `${n} · ${onde}`;
+  }
+
+  function visivel(p) {
+    if (filtro.tipo !== "todos" && (p.tipo !== filtro.tipo || ehRelato(p))) return false;
+    if (filtro.sit === "prazo" && !prazoInfo(p)?.aberto) return false;
+    if (filtro.sit === "autorizada" && !["deferido", "comunicado"].includes(p.decisao)) return false;
+    if (filtro.sit === "negada" && p.decisao !== "indeferido") return false;
+    if (filtro.sub && p.subprefeitura !== filtro.sub) return false;
+    if (filtro.local && p.local !== filtro.local) return false;
+    if (filtro.q) {
+      const alvo = [p.endereco, p.texto, p.processo_sei, (p.especies || []).join(" "), p.subprefeitura, p.assunto].join(" ").toLowerCase();
+      if (!alvo.includes(filtro.q)) return false;
+    }
+    return true;
+  }
+
+  function ordem(a, b) {
+    const pa = prazoInfo(a), pb = prazoInfo(b);
+    const ka = pa?.aberto ? pa.dias : 999, kb = pb?.aberto ? pb.dias : 999;
+    if (ka !== kb) return ka - kb;
+    return (b.data_publicacao || "").localeCompare(a.data_publicacao || "");
+  }
+
+  function el(tag, attrs = {}, ...filhos) {
+    const e = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) k === "class" ? e.className = v : e.setAttribute(k, v);
+    for (const f of filhos) if (f != null && f !== false) e.append(f);
+    return e;
+  }
+
+
+  // ---------- "O que fazer neste caso"
+  const podeAgir = p => !ehRelato(p) && prazoInfo(p)?.aberto && p.local !== "interna" && p.decisao !== "indeferido";
+  const ARGUMENTOS = [
+    ["saudavel", "A árvore aparenta estar saudável, sem sinais de doença, tronco oco ou galhos secos, conforme as fotografias em anexo."],
+    ["sombra", "A árvore oferece sombra e conforto térmico à rua, a quem caminha e às casas vizinhas."],
+    ["fauna", "A árvore abriga aves, abelhas e outros animais e faz parte da paisagem e da memória do bairro."],
+    ["calcada", "Eventuais danos à calçada podem ser resolvidos com ampliação do canteiro ou adequação do passeio, sem remover a árvore."],
+    ["motivo", "A publicação não informa com clareza o motivo técnico da intervenção, o que impede a população de avaliá-la."],
+  ];
+  const hojeBR = () => new Date().toLocaleDateString("pt-BR", { day: "numeric", month: "long", year: "numeric" });
+  const servico = p => p.tipo === "poda" ? "poda" : p.tipo === "transplante" ? "transplante" : "remoção";
+  const qtdTxt = p => p.arvores ? `${p.arvores} árvore${p.arvores > 1 ? "s" : ""}` : "árvore(s)";
+  const ondeTxt = p => p.endereco || "endereço indicado na publicação";
+  const procTxt = p => p.processo_sei ? `Processo SEI nº ${p.processo_sei}` : "Processo indicado na publicação";
+
+  function textoRecurso(p, f) {
+    const args = ARGUMENTOS.filter(([k]) => f.args.has(k)).map(([, t]) => t);
+    if (f.outros.trim()) args.push(f.outros.trim());
+    const lista = args.length ? args.map((t, i) => `${i + 1}. ${t}`).join("\n") : "1. [descreva aqui os motivos]";
+    return `À Subprefeitura ${p.subprefeitura || "[nome da subprefeitura]"}
+
+Ref.: ${procTxt(p)} — publicação no Diário Oficial da Cidade de ${fmt(p.data_publicacao)}
+Assunto: ${servico(p)} de ${qtdTxt(p)} em ${ondeTxt(p)}
+
+${f.nome.trim() || "[seu nome completo]"}, residente em ${f.endereco.trim() || "[seu endereço]"}, vem, dentro do prazo indicado na publicação, apresentar RECURSO contra a ${servico(p)} acima, pelos seguintes motivos:
+
+${lista}
+
+Diante disso, solicito:
+1. a suspensão da ${servico(p)} até a decisão sobre este recurso;
+2. nova vistoria técnica, com aviso prévio aos moradores para que possam acompanhá-la;
+3. cópia do laudo técnico que fundamentou a decisão;
+4. que sejam consideradas alternativas, como poda de adequação, ampliação do canteiro ou adequação da calçada.
+
+Seguem em anexo fotografias da árvore e lista de apoio assinada por moradores da região.
+
+São Paulo, ${hojeBR()}.
+
+
+______________________________
+${f.nome.trim() || "[seu nome completo]"}`;
+  }
+
+  function imprimir(html) {
+    const alvo = document.getElementById("impressao");
+    alvo.innerHTML = html;
+    document.body.classList.add("imprimindo");
+    const limpar = () => { document.body.classList.remove("imprimindo"); window.removeEventListener("afterprint", limpar); };
+    window.addEventListener("afterprint", limpar);
+    try { window.print(); } catch (e) { limpar(); }
+    setTimeout(limpar, 1500);
+  }
+  const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  function listaApoioHTML(p) {
+    const linhas = Array.from({ length: 18 }, () => "<tr><td></td><td></td><td></td></tr>").join("");
+    return `<h1>Lista de apoio ao recurso</h1>
+<p><b>${esc(procTxt(p))}</b> — Subprefeitura ${esc(p.subprefeitura || "")}<br>
+${esc(servico(p)[0].toUpperCase() + servico(p).slice(1))} de ${esc(qtdTxt(p))} em ${esc(ondeTxt(p))}, publicada no Diário Oficial da Cidade de ${esc(fmt(p.data_publicacao))}.</p>
+<p>Nós, moradores e frequentadores da região, apoiamos o recurso contra esta ${esc(servico(p))} e pedimos nova vistoria técnica com participação dos moradores.</p>
+<table><thead><tr><th style="width:38%">Nome</th><th style="width:37%">Endereço (rua e número)</th><th>Assinatura</th></tr></thead><tbody>${linhas}</tbody></table>`;
+  }
+
+  const EMAIL = "alertaarvoresp@gmail.com";
+  function copiarBtn(texto, rotulo) {
+    const b = el("button", { type: "button" }, rotulo);
+    b.addEventListener("click", () => {
+      const sel = () => { const r = document.createRange(); r.selectNodeContents(b.previousSibling); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selecionado: use Ctrl+C"; };
+      if (navigator.clipboard) navigator.clipboard.writeText(texto).then(() => { b.textContent = "Copiado"; setTimeout(() => b.textContent = rotulo, 2000); }, sel); else sel();
+    });
+    return b;
+  }
+
+  let focoAntes = null;
+  function fecharAgir() {
+    const box = document.getElementById("agir");
+    box.hidden = true; box.replaceChildren();
+    if (location.hash.startsWith("#agir-")) history.replaceState(null, "", location.pathname + location.search);
+    focoAntes?.focus();
+  }
+
+  function abrirAgir(p, origem) {
+    focoAntes = origem || document.activeElement;
+    const box = document.getElementById("agir");
+    const pr = prazoInfo(p);
+    const prazoBR = fmt(p.prazo_ate);
+    const f = { nome: "", endereco: "", outros: "", args: new Set(["saudavel", "sombra"]) };
+
+    const area = el("textarea", { id: "agir-texto", readonly: "", "aria-label": "Texto do recurso" });
+    const atualizar = () => { area.value = textoRecurso(p, f); };
+    const campo = (rot, id, chave) => {
+      const i = el("input", { type: "text", id, autocomplete: chave === "nome" ? "name" : "street-address" });
+      i.addEventListener("input", () => { f[chave] = i.value; atualizar(); });
+      return el("label", { for: id, style: "flex-direction:column;gap:4px" }, rot, i);
+    };
+    const checks = ARGUMENTOS.map(([k, t]) => {
+      const c = el("input", { type: "checkbox", id: "arg-" + k });
+      c.checked = f.args.has(k);
+      c.addEventListener("change", () => { c.checked ? f.args.add(k) : f.args.delete(k); atualizar(); });
+      return el("label", { for: "arg-" + k }, c, t);
+    });
+    const outros = el("input", { type: "text", id: "arg-outros", placeholder: "Outro motivo (opcional)" });
+    outros.addEventListener("input", () => { f.outros = outros.value; atualizar(); });
+
+    const copiar = el("button", { type: "button", class: "principal" }, "Copiar texto");
+    copiar.addEventListener("click", () => {
+      const sel = () => { area.focus(); area.select(); copiar.textContent = "Selecionado: use Ctrl+C"; };
+      if (navigator.clipboard) navigator.clipboard.writeText(area.value).then(() => { copiar.textContent = "Copiado"; setTimeout(() => copiar.textContent = "Copiar texto", 2000); }, sel); else sel();
+    });
+    const impRec = el("button", { type: "button" }, "Imprimir recurso");
+    impRec.addEventListener("click", () => imprimir(`<pre>${esc(area.value)}</pre>`));
+    const impLista = el("button", { type: "button", class: "principal" }, "Imprimir lista de apoio");
+    impLista.addEventListener("click", () => imprimir(listaApoioHTML(p)));
+    const fechar = el("button", { type: "button", class: "agir-fechar" }, "Fechar");
+    fechar.addEventListener("click", fecharAgir);
+
+    const passo = (quando, txt) => el("li", {}, el("div", {}, el("span", { class: "quando" }, quando), txt));
+    const folha = el("div", { class: "agir-folha" },
+      el("div", { class: "agir-topo" }, el("h2", { id: "agir-titulo" }, "O que fazer neste caso"), fechar),
+      el("div", { class: "agir-caso" },
+        el("b", {}, titulo(p)),
+        el("span", {}, [p.subprefeitura && `Subprefeitura ${p.subprefeitura}`, p.processo_sei && `Processo ${p.processo_sei}`, `publicado em ${fmt(p.data_publicacao)}`].filter(Boolean).join(" · ")),
+        el("span", { class: "agir-prazo" }, pr.dias === 0 ? "O prazo de recurso termina hoje." : `Prazo de recurso até ${prazoBR} (${pr.dias} dia${pr.dias > 1 ? "s" : ""}).`)),
+      el("ol", { class: "passos" },
+        passo("Hoje", "Vá até a árvore, confira o endereço com a publicação e fotografe a árvore inteira, a copa, o tronco e a calçada. As fotos são a sua principal prova."),
+        passo("Hoje", "Preencha o recurso abaixo, imprima duas vias e junte as fotos."),
+        passo(`Até ${prazoBR}`, "Recolha assinaturas na lista de apoio, de preferência de quem mora na própria rua."),
+        passo(`Até ${prazoBR}`, "Protocole o recurso com a lista na subprefeitura e guarde a via carimbada. Antes, confirme por telefone se ela também aceita protocolo por outro canal."),
+        passo("Quanto mais, melhor", "Cada vizinho pode protocolar o seu próprio recurso. Vários pedidos sobre o mesmo caso chamam mais atenção."),
+        passo("Protocolou? Conte pra gente", el("span", {},
+          "Mande uma foto da via carimbada para o e-mail abaixo. Cada recurso entra no contador do site e mostra à Prefeitura que a vizinhança está de olho.",
+          el("span", { class: "agir-email" }, el("code", {}, EMAIL), copiarBtn(EMAIL, "Copiar e-mail")),
+          el("span", { class: "agir-email" }, "Assunto: ", el("code", {}, `Recurso protocolado – ${p.id}`), copiarBtn(`Recurso protocolado – ${p.id}`, "Copiar assunto")),
+          el("small", { class: "agir-aviso", style: "display:block" }, "Usamos sua mensagem só para a contagem. Nada é publicado."))),
+        passo("Se cortarem antes do prazo", "Fotografe com data e registre na Ouvidoria Geral do Município e no SP156. Depois, conte para a gente pelo e-mail do projeto.")),
+      el("section", { class: "agir-bloco" },
+        el("h3", {}, "Recurso"),
+        el("p", {}, "Já vem com os dados do caso. Complete seu nome e endereço e marque os motivos que valem para esta árvore."),
+        el("div", { class: "agir-campos" }, campo("Seu nome", "agir-nome", "nome"), campo("Seu endereço", "agir-end", "endereco")),
+        ...checks, outros, area,
+        el("div", { class: "agir-botoes" }, copiar, impRec),
+        el("p", { class: "agir-aviso" }, "Modelo de apoio ao cidadão. Não é orientação jurídica.")),
+      el("section", { class: "agir-bloco" },
+        el("h3", {}, "Lista de apoio"),
+        el("p", {}, "Uma folha para imprimir, já com o cabeçalho deste caso, para recolher nome, endereço e assinatura dos vizinhos. Não pede CPF nem RG."),
+        el("div", { class: "agir-botoes" }, impLista))
+    );
+    atualizar();
+    box.replaceChildren(folha);
+    box.hidden = false;
+    box.onclick = ev => { if (ev.target === box) fecharAgir(); };
+    history.replaceState(null, "", "#agir-" + p.id);
+    fechar.focus();
+  }
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !document.getElementById("agir").hidden) fecharAgir(); });
+
+  function card(p) {
+    const tagClasse = ehRelato(p) ? "relato" : (p.tipo || "outro");
+    const tagTxt = ehRelato(p) ? "Relato" : (TIPO_NOME[p.tipo] || "Manejo");
+    const pr = prazoInfo(p);
+    const meta = [p.subprefeitura && `Subpref. ${p.subprefeitura}`, LOCAL_NOME[p.local], p.precisao === "subprefeitura" && "local aproximado", p.precisao === "rua" && "posição pela rua"].filter(Boolean).join(" · ");
+    const c = el("article", { class: "caso" + (pr?.aberto ? " com-prazo" : ""), id: "caso-" + p.id, tabindex: "0" },
+      el("div", { class: "topo" }, el("span", { class: "tag " + tagClasse }, tagTxt),
+        DEC_NOME[p.decisao] ? el("span", { class: "decisao " + p.decisao }, DEC_NOME[p.decisao]) : null,
+        el("span", { class: "data" }, fmt(p.data_publicacao))),
+      el("h3", {}, titulo(p)),
+      meta ? el("div", { class: "meta" }, meta) : null,
+      (p.especies && p.especies.length) ? el("div", { class: "meta" }, el("i", {}, p.especies.join(", "))) : null,
+      pr ? el("div", { class: "prazo" + (pr.aberto ? "" : " encerrado") }, pr.txt) : null
+    );
+    if (podeAgir(p)) {
+      const b = el("button", { type: "button", class: "agir-btn" }, "O que fazer neste caso →");
+      b.addEventListener("click", ev => { ev.stopPropagation(); abrirAgir(p, b); });
+      c.append(b);
+    }
+    const det = el("div", { class: "detalhe" },
+      el("div", { class: "meta" }, [p.orgao_nome || p.orgao, p.tipo_documento, p.assunto].filter(Boolean).join(" · ")),
+      p.prazo_frase && pr?.aberto ? el("div", { class: "meta" }, "Prazo, nas palavras da publicação: ", el("i", {}, p.prazo_frase)) : null,
+      el("blockquote", {}, p.texto || ""));
+    const acoes = el("div", { class: "acoes" });
+    if (p.fonte_url) acoes.append(el("a", { href: p.fonte_url, target: "_blank", rel: "noopener" }, "Publicação original"));
+    if (p.processo_sei && /^\d{4}\.\d{4}\/\d{7}-\d$/.test(p.processo_sei)) {
+      acoes.append(el("a", { href: "https://processos.prefeitura.sp.gov.br/Forms/ConsultarProcessos.aspx?numeroprocesso=" + p.processo_sei.replace(/\D/g, ""), target: "_blank", rel: "noopener" }, "Processo SEI"));
+      const b = el("button", { type: "button" }, "Copiar ", el("span", { class: "sei" }, p.processo_sei));
+      b.addEventListener("click", ev => {
+        ev.stopPropagation();
+        const sel = () => { const r = document.createRange(); r.selectNodeContents(b.lastChild); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+        if (navigator.clipboard) navigator.clipboard.writeText(p.processo_sei).then(() => { b.firstChild.textContent = "Copiado "; }, sel); else sel();
+      });
+      acoes.append(b);
+    }
+    const m = marcadores[p.id];
+    if (m && p.precisao !== "subprefeitura") { const g = m.getLatLng(); acoes.append(el("a", { href: `https://www.openstreetmap.org/?mlat=${g.lat}&mlon=${g.lng}#map=18/${g.lat}/${g.lng}`, target: "_blank", rel: "noopener" }, "Ver no OpenStreetMap")); }
+    det.append(acoes); c.append(det);
+    c.addEventListener("click", ev => { if (!ev.target.closest("a,button")) selecionar(p.id, true); });
+    c.addEventListener("keydown", e => { if (e.key === "Enter" && e.target === c) selecionar(p.id, true); });
+    return c;
+  }
+
+  function selecionar(id, voar) {
+    document.querySelectorAll(".caso.ativo").forEach(e => e.classList.remove("ativo"));
+    ativo = id;
+    let c = document.getElementById("caso-" + id);
+    if (!c) { mostrar = casos.length; render(); c = document.getElementById("caso-" + id); }
+    if (c) { c.classList.add("ativo"); if (!voar) c.scrollIntoView({ block: "nearest", behavior: "smooth" }); }
+    const m = marcadores[id];
+    if (m && voar) mapa.flyTo(m.getLatLng(), Math.max(mapa.getZoom(), 15), { duration: 0.6 });
+    if (m) m.openTooltip();
+  }
+
+  function render() {
+    const lista = document.getElementById("lista");
+    lista.replaceChildren();
+    const vis = casos.filter(visivel).sort(ordem);
+    const ids = new Set(vis.map(p => p.id));
+    for (const p of casos) { const m = marcadores[p.id]; if (m) ids.has(p.id) ? m.addTo(mapa) : m.remove(); }
+    vis.slice(0, mostrar).forEach(p => lista.append(card(p)));
+    if (vis.length > mostrar) {
+      const b = el("button", { type: "button", class: "mais" }, `Mostrar mais ${Math.min(POR_PAGINA, vis.length - mostrar)} de ${vis.length - mostrar} restantes`);
+      b.addEventListener("click", () => { mostrar += POR_PAGINA; render(); });
+      lista.append(b);
+    }
+    if (!vis.length) lista.append(el("p", { class: "vazio" }, "Nenhum caso com esses filtros. Tente outra subprefeitura ou limpe a busca."));
+    document.getElementById("contagem").textContent = `${vis.length} caso${vis.length === 1 ? "" : "s"} · prazos abertos primeiro`;
+    if (ativo) document.getElementById("caso-" + ativo)?.classList.add("ativo");
+  }
+
+  function resumo() {
+    const reais = casos.filter(p => !ehRelato(p));
+    document.getElementById("n-abertos").textContent = reais.filter(p => prazoInfo(p)?.aberto).length;
+    document.getElementById("n-remocoes").textContent = reais.filter(p => p.tipo === "remocao" && p.decisao === "deferido").length;
+    document.getElementById("n-arvores").textContent = reais.reduce((s, p) => s + (p.decisao !== "indeferido" ? (p.arvores || 0) : 0), 0).toLocaleString("pt-BR");
+  }
+
+  function aplicarChip(grupo, v) {
+    filtro[grupo] = v;
+    document.querySelectorAll(`.chip[data-grupo="${grupo}"]`).forEach(x => x.setAttribute("aria-pressed", x.dataset.v === v));
+  }
+  document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => { aplicarChip(b.dataset.grupo, b.dataset.v); mostrar = POR_PAGINA; render(); }));
+  document.querySelectorAll("[data-atalho]").forEach(b => b.addEventListener("click", () => {
+    const a = b.dataset.atalho;
+    aplicarChip("sit", a === "prazo" ? "prazo" : a === "remocao" ? "autorizada" : "todas");
+    aplicarChip("tipo", a === "remocao" ? "remocao" : "todos");
+    mostrar = POR_PAGINA; render();
+  }));
+  const normT = s => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toUpperCase().replace(/[\/\-]/g, " ").replace(/\s+/g, " ").trim();
+  const mesmaSub = (geo, nome) => { const a = normT(geo), b = normT(nome); return !!b && (a.startsWith(b) || b.startsWith(a)); };
+  document.getElementById("f-sub").addEventListener("change", e => {
+    filtro.sub = e.target.value; mostrar = POR_PAGINA; render();
+    const alvo = subpLayer && subpLayer.getLayers().find(l => mesmaSub(l.feature.properties.subpref, filtro.sub));
+    if (alvo) mapa.fitBounds(alvo.getBounds(), { padding: [20, 20] }); else if (subpLayer) mapa.fitBounds(subpLayer.getBounds());
+  });
+  document.getElementById("f-local").addEventListener("change", e => { filtro.local = e.target.value; mostrar = POR_PAGINA; render(); });
+  document.getElementById("f-busca").addEventListener("input", e => { filtro.q = e.target.value.trim().toLowerCase(); mostrar = POR_PAGINA; render(); });
+
+  const json = u => fetch(u).then(r => { if (!r.ok) throw new Error(u + " " + r.status); return r.json(); });
+  json("dados/contador.json").then(c => {
+    const n = +c.recursos || 0;
+    if (n > 0) {
+      document.getElementById("n-recursos").textContent = n.toLocaleString("pt-BR");
+      document.getElementById("rotulo-recursos").textContent = n === 1 ? "recurso de vizinho em defesa das árvores" : "recursos de vizinhos em defesa das árvores";
+      document.getElementById("contador").hidden = false;
+    }
+  }).catch(() => {});
+  Promise.all([json("dados/subprefeituras.geojson"), json("dados/casos.geojson"), Promise.resolve({ features: [] })])
+  .then(([subs, fc, rel]) => {
+    subpLayer = L.geoJSON(subs, { style: () => ({ color: css("--mapa-sub"), weight: 1.2, fillColor: css("--papel"), fillOpacity: 0.3 }),
+      onEachFeature: (f, l) => l.bindTooltip(f.properties.subpref.replace(/-/g, "/").toLowerCase().replace(/(^|[\s\/'])\S/g, s => s.toUpperCase()), { sticky: true, opacity: 0.8 }) }).addTo(mapa);
+    mapa.fitBounds(subpLayer.getBounds(), { padding: [10, 10] });
+
+    if (fc.atualizado_em) document.getElementById("atualizado").textContent = new Date(fc.atualizado_em).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
+    const datas = fc.features.map(f => f.properties.data_publicacao).filter(Boolean).sort();
+    if (datas.length) document.getElementById("periodo").textContent = `${fmt(datas[0])} a ${fmt(datas[datas.length - 1])}`;
+
+    const subsSet = new Set();
+    casos = [...fc.features, ...rel.features].map(f => {
+      const p = f.properties;
+      if (p.subprefeitura) subsSet.add(p.subprefeitura);
+      if (f.geometry) {
+        const [lon, lat] = f.geometry.coordinates;
+        const aprox = p.precisao === "subprefeitura";
+        const negado = p.decisao === "indeferido";
+        const aberto = prazoInfo(p)?.aberto;
+        const m = L.circleMarker([lat, lon], {
+          radius: raio(p), color: aberto ? css("--prazo") : aprox ? css("--tinta-2") : cor(p), weight: aberto ? 3 : aprox ? 1.5 : 1.2,
+          dashArray: aprox ? "3 3" : null, fillColor: cor(p), fillOpacity: negado ? 0.1 : aprox ? 0.25 : 0.7 });
+        m.bindTooltip(titulo(p), { direction: "top", offset: [0, -raio(p)] });
+        m.on("click", () => selecionar(p.id, false));
+        marcadores[p.id] = m;
+      }
+      return p;
+    });
+    const sel = document.getElementById("f-sub");
+    [...subsSet].sort((a, b) => a.localeCompare(b, "pt")).forEach(s => sel.append(el("option", { value: s }, s)));
+    resumo();
+    render();
+    const h = location.hash.replace(/^#(caso|agir)-/, "");
+    const alvo = h && casos.find(p => p.id === h);
+    if (alvo) { selecionar(h, true); if (location.hash.startsWith("#agir-") && podeAgir(alvo)) abrirAgir(alvo); }
+  }).catch(err => {
+    document.getElementById("lista").replaceChildren(el("p", { class: "vazio" }, "Não consegui carregar os dados agora. Recarregue a página em alguns instantes."));
+    console.error(err);
+  });
+})();
+</script>
