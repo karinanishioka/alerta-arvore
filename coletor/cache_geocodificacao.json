@@ -142,6 +142,11 @@
 -46.611758,
 "endereco"
 ],
+"Avenida Domingos de Souza Marques, 164": [
+-23.5107562,
+-46.738158,
+"endereco"
+],
 "Avenida Doutor Dante Pazzanese, 500": [
 -23.5847183,
 -46.6515992,
@@ -393,6 +398,11 @@
 -46.7452759,
 "endereco"
 ],
+"Avenida Otaviano Alves de Lima, 1824": [
+-23.5071919,
+-46.7159763,
+"endereco"
+],
 "Avenida Padre José Maria": [
 -23.653977,
 -46.70922,
@@ -631,6 +641,7 @@
 "Praça Olga Bullgarelli D'auria, 100": null,
 "Praça Olga Bullgarelli D'auria, 132": null,
 "Praça Olga Bullgarelli D'auria, 150": null,
+"Praça Olga Bullgarelli D'auria, 200": null,
 "Praça Olga Bullgarelli D'auria, 40": null,
 "Praça Olga Bullgarelli D'auria, 88": null,
 "Praça Professor Osório de Almeida": [
@@ -1439,6 +1450,11 @@
 -46.684313,
 "endereco"
 ],
+"Rua Diana, 250": [
+-23.5306869,
+-46.6799073,
+"endereco"
+],
 "Rua Dias Penteado, 115": [
 -23.5474818,
 -46.5139104,
@@ -1618,6 +1634,11 @@
 -23.596787,
 -46.628096,
 "rua"
+],
+"Rua Doutor Saul de Camargo Neves, 248": [
+-23.5083088,
+-46.4993836,
+"endereco"
 ],
 "Rua Doutor Suzano Brandão, 932": [
 -23.536496,
@@ -1821,6 +1842,11 @@
 "Rua Gama Cerqueira, 191": [
 -23.5691003,
 -46.6197822,
+"endereco"
+],
+"Rua Gama Cerqueira, 23": [
+-23.5677148,
+-46.6192714,
 "endereco"
 ],
 "Rua Gama Cerqueira, 42": [
@@ -2775,6 +2801,11 @@
 -46.504084,
 "endereco"
 ],
+"Rua Pires da Mota, 735": [
+-23.5681266,
+-46.6352036,
+"endereco"
+],
 "Rua Placido Vieira, 150": [
 -23.54702,
 -46.779665,
@@ -2784,6 +2815,11 @@
 -23.588227,
 -46.537986,
 "endereco"
+],
+"Rua Porto Torres": [
+-23.7008155,
+-46.7086554,
+"rua"
 ],
 "Rua Praia de Mucuripe, 50": null,
 "Rua Princesa Isabel, 534": [
