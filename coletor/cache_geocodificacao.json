@@ -39,6 +39,11 @@
 -46.6568589,
 "endereco"
 ],
+"Avenida Adolfo Pinheiro, 848": [
+-23.6459918,
+-46.7012726,
+"endereco"
+],
 "Avenida Afonso de Sampaio": [
 -23.575622,
 -46.478649,
@@ -79,6 +84,11 @@
 "Avenida Aricanduva, 753": [
 -23.539133,
 -46.543434,
+"endereco"
+],
+"Avenida Arquiteto Carlos Bratke, 625": [
+-23.6397455,
+-46.7155469,
 "endereco"
 ],
 "Avenida Astolfo Dutra, 145": [
@@ -468,6 +478,11 @@
 -46.585488,
 "endereco"
 ],
+"Avenida Pedro Bueno, 862": [
+-23.6365173,
+-46.6513329,
+"endereco"
+],
 "Avenida Pedro Álvares Cabral": [
 -23.582245,
 -46.656703,
@@ -607,6 +622,11 @@
 "Avenida Vereador João de Luca, 1005": [
 -23.645154,
 -46.671985,
+"endereco"
+],
+"Avenida Washington Luís, 2455": [
+-23.6292613,
+-46.6667632,
 "endereco"
 ],
 "Avenida Zelina, 577": [
@@ -1129,6 +1149,11 @@
 "Rua Baltazar Nunes, 600": [
 -23.556182,
 -46.447445,
+"endereco"
+],
+"Rua Bandeira Paulista, 439": [
+-23.5880518,
+-46.6745378,
 "endereco"
 ],
 "Rua Baroré, 284": [
@@ -1769,6 +1794,11 @@
 "Rua Dornas Filho, 318": [
 -23.642253,
 -46.664238,
+"endereco"
+],
+"Rua Doutor Abelardo Vergueiro César, 621": [
+-23.63644,
+-46.668861,
 "endereco"
 ],
 "Rua Doutor Albuquerque Lins, 268": [
@@ -2785,6 +2815,11 @@
 "endereco"
 ],
 "Rua Mamoneira, 38": null,
+"Rua Manaus, 111": [
+-23.564696,
+-46.5827429,
+"endereco"
+],
 "Rua Manaus, 177": [
 -23.564696,
 -46.5827429,
@@ -2809,6 +2844,11 @@
 -23.658858,
 -46.756781,
 "rua"
+],
+"Rua Mantiqueira, 202": [
+-23.6900236,
+-46.6285023,
+"endereco"
 ],
 "Rua Manuel Cherem, 190": [
 -23.640622,
@@ -2962,6 +3002,11 @@
 -46.513086,
 "endereco"
 ],
+"Rua Ministro Fonseca Filho, 21": [
+-23.4682393,
+-46.587054,
+"endereco"
+],
 "Rua Ministro Jesuíno Cardoso, 501": [
 -23.591996,
 -46.679375,
@@ -2970,6 +3015,11 @@
 "Rua Ministro Rodrigo Otávio, 190": [
 -23.632352,
 -46.647233,
+"endereco"
+],
+"Rua Miranda Guerra, 14": [
+-23.6344601,
+-46.6809585,
 "endereco"
 ],
 "Rua Mirinzal, 115": [
@@ -2996,6 +3046,11 @@
 "Rua Monteiro Soares Filho, 449": [
 -23.588471,
 -46.576034,
+"endereco"
+],
+"Rua Morais de Barros, 640": [
+-23.6157625,
+-46.6728368,
 "endereco"
 ],
 "Rua Morro da Capoaba, 393": [
@@ -3550,6 +3605,11 @@
 -46.544082,
 "endereco"
 ],
+"Rua Sobrália, 465": [
+-23.6729518,
+-46.6892345,
+"endereco"
+],
 "Rua Solidonio Leite, 1995": [
 -23.5847431,
 -46.5396267,
@@ -3668,6 +3728,11 @@
 "Rua Teresinha, 123": [
 -23.531529,
 -46.556134,
+"endereco"
+],
+"Rua Tertuliano Branco de Miranda, 26": [
+-23.6468675,
+-46.7188685,
 "endereco"
 ],
 "Rua Theodomiro Moraes Cunha": [
@@ -3866,6 +3931,11 @@
 "Rua da Mooca, 3266": [
 -23.557038,
 -46.593693,
+"endereco"
+],
+"Rua da Mooca, 4264": [
+-23.5609836,
+-46.5848364,
 "endereco"
 ],
 "Rua da Paz, 569": [
