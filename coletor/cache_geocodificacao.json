@@ -49,6 +49,11 @@
 -46.478649,
 "rua"
 ],
+"Avenida Afonso de Sampaio e Sousa, 951": [
+-23.5649134,
+-46.4673915,
+"endereco"
+],
 "Avenida Afonso de Sampaio e Souza": null,
 "Avenida Afonso de Sampaio e Souza, 951": null,
 "Avenida Aguia de Haia": [
@@ -640,6 +645,11 @@
 "rua"
 ],
 "Avenida Sargento Geraldo Sant'ana, 890": null,
+"Avenida Senador Teotonio Vilela, 2159": [
+-23.7069265,
+-46.6997245,
+"endereco"
+],
 "Avenida São Remo, 463": [
 -23.5647411,
 -46.7437502,
@@ -1019,6 +1029,11 @@
 "Rua Antonio Goncalves Valim, 32": [
 -23.479037,
 -46.756422,
+"endereco"
+],
+"Rua Antonio Lobo, 50": [
+-23.5241635,
+-46.5463347,
 "endereco"
 ],
 "Rua Antonio Lopes Medeiros, 153": [
@@ -1758,6 +1773,11 @@
 -46.601932,
 "endereco"
 ],
+"Rua Célso Mantovani, 1": [
+-23.7143393,
+-46.7152269,
+"endereco"
+],
 "Rua César Domênico, 112": [
 -23.548647,
 -46.43436,
@@ -2045,6 +2065,11 @@
 -46.5677424,
 "endereco"
 ],
+"Rua Dráusio, 26": [
+-23.664562,
+-46.5932261,
+"endereco"
+],
 "Rua Durande, 176": [
 -23.538227,
 -46.483791,
@@ -2080,6 +2105,11 @@
 -23.462929,
 -46.620367,
 "endereco"
+],
+"Rua Elpídia Gomes de Oliveira": [
+-23.5681439,
+-46.4884034,
+"rua"
 ],
 "Rua Embaixador Câmara Canto, 109": [
 -23.500784,
@@ -2406,6 +2436,11 @@
 "Rua Groenlândia, 77": [
 -23.581051,
 -46.666266,
+"endereco"
+],
+"Rua Grão Mongol, 512": [
+-23.6052062,
+-46.5598687,
 "endereco"
 ],
 "Rua Guacuma, 99": [
@@ -3024,6 +3059,11 @@
 -46.756781,
 "rua"
 ],
+"Rua Manoel Quirino de Matos, 1895": [
+-23.6097188,
+-46.495718,
+"endereco"
+],
 "Rua Mantiqueira, 202": [
 -23.6900236,
 -46.6285023,
@@ -3143,6 +3183,11 @@
 "Rua Marquês de Santo Amaro, 876": [
 -23.610895,
 -46.557845,
+"endereco"
+],
+"Rua Martim Pescador, 170": [
+-23.5098648,
+-46.782229,
 "endereco"
 ],
 "Rua Martiniano de Carvalho, 927": [
@@ -3742,6 +3787,11 @@
 "Rua Santo Alexandre, 240": [
 -23.531033,
 -46.515582,
+"endereco"
+],
+"Rua Santo Antero, 188": [
+-23.5294428,
+-46.5440352,
 "endereco"
 ],
 "Rua Santo Estácio, 248": [
