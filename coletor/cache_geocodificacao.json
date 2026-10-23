@@ -9,6 +9,11 @@
 -46.666236,
 "endereco"
 ],
+"Alameda Jauaperi, 890": [
+-23.60425,
+-46.6668764,
+"endereco"
+],
 "Alameda Joaquim Eugênio de Lima, 1105": [
 -23.5702482,
 -46.6547807,
@@ -256,6 +261,11 @@
 -23.59116,
 -46.620288,
 "rua"
+],
+"Avenida Doutora Ruth Cardoso, 4797": [
+-23.5326452,
+-46.74741,
+"endereco"
 ],
 "Avenida Doze de Janeiro Até A Rua Iemanjá": null,
 "Avenida Engenheiro Oscar Americano": [
@@ -716,6 +726,11 @@
 "rua"
 ],
 "Avenida Sargento Geraldo Sant'ana, 890": null,
+"Avenida Senador Casemiro da Rocha, 1257": [
+-23.6062568,
+-46.6403505,
+"endereco"
+],
 "Avenida Senador Teotonio Vilela, 2159": [
 -23.7069265,
 -46.6997245,
@@ -1007,6 +1022,11 @@
 -46.511025,
 "endereco"
 ],
+"Rua Alvarenga": [
+-23.5724455,
+-46.7113631,
+"rua"
+],
 "Rua Alves Ribeiro, 93": [
 -23.565296,
 -46.622026,
@@ -1170,6 +1190,11 @@
 "Rua Antônio Lindoro da Silva, 817": [
 -23.5377829,
 -46.5360256,
+"endereco"
+],
+"Rua Antônio Madi, 292": [
+-23.6411777,
+-46.6467225,
 "endereco"
 ],
 "Rua Antônio Madi, 43": [
@@ -3229,6 +3254,11 @@
 "Rua Leme da Silva, 172": [
 -23.560912,
 -46.591951,
+"endereco"
+],
+"Rua Leonardo Nunes, 47": [
+-23.5978679,
+-46.6391784,
 "endereco"
 ],
 "Rua Leopoldo Couto Magalhães Júnior, 831": [
