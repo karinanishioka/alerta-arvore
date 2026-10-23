@@ -34,6 +34,11 @@
 -46.646402,
 "endereco"
 ],
+"Alameda dos Nhambiquaras, 583": [
+-23.60492,
+-46.6572124,
+"endereco"
+],
 "Alameda dos Tupiniquins, 512": [
 -23.6089908,
 -46.6568589,
@@ -703,6 +708,11 @@
 "Avenida Ver. Abel Ferreira, 1058": [
 -23.5581335,
 -46.5691059,
+"endereco"
+],
+"Avenida Vereador José Diniz, 3687": [
+-23.6156547,
+-46.6740592,
 "endereco"
 ],
 "Avenida Vereador João de Luca, 1005": [
@@ -1790,6 +1800,11 @@
 -46.524269,
 "endereco"
 ],
+"Rua Coronel Bento Noronha, 136": [
+-23.5704777,
+-46.6827605,
+"endereco"
+],
 "Rua Coronel Bento Noronha, 165": [
 -23.570478,
 -46.682761,
@@ -2175,6 +2190,11 @@
 "Rua Doutor Paulo Queiroz, 987": [
 -23.584938,
 -46.490243,
+"endereco"
+],
+"Rua Doutor Procópio Ribeiro dos Santos, 235": [
+-23.6550745,
+-46.6852145,
 "endereco"
 ],
 "Rua Doutor Renato Paes de Barros, 410": [
@@ -3760,6 +3780,11 @@
 -46.586341,
 "endereco"
 ],
+"Rua Pindaúva, 171": [
+-23.632892,
+-46.6633784,
+"endereco"
+],
 "Rua Pinheiro Guimaraes, 278": [
 -23.590721,
 -46.569814,
@@ -3958,6 +3983,11 @@
 -46.600836,
 "endereco"
 ],
+"Rua Rosalio José da Conceição, 384": [
+-23.495808,
+-46.7237231,
+"endereco"
+],
 "Rua Rui Martins, 169": [
 -23.564016,
 -46.586702,
@@ -3993,6 +4023,7 @@
 -46.723695,
 "endereco"
 ],
+"Rua Santa Abina, 119": null,
 "Rua Santa Cirila, 102": [
 -23.5199655,
 -46.5185922,
@@ -4435,6 +4466,11 @@
 -46.684242,
 "endereco"
 ],
+"Rua Visconde de Porto Seguro, 42": [
+-23.6479951,
+-46.6917742,
+"endereco"
+],
 "Rua Visconte de Porto Seguro": null,
 "Rua Vitoriano dos Anjos, 97": [
 -23.569917,
@@ -4536,6 +4572,11 @@
 -46.702943,
 "endereco"
 ],
+"Rua das Barcas, 545": [
+-23.6386265,
+-46.685638,
+"endereco"
+],
 "Rua das Flechas, 215": [
 -23.651471,
 -46.6706701,
@@ -4559,6 +4600,11 @@
 "Rua das Perobas, 173": [
 -23.642966,
 -46.643241,
+"endereco"
+],
+"Rua das Taquaras, 300": [
+-23.6511417,
+-46.6644058,
 "endereco"
 ],
 "Rua das Taquaras, 389": [
@@ -4599,6 +4645,11 @@
 "Rua dos Economistas, 977": [
 -23.501514,
 -46.517953,
+"endereco"
+],
+"Rua dos Escultores, 220": [
+-23.540945,
+-46.7201532,
 "endereco"
 ],
 "Rua dos Ingleses, 542": [
