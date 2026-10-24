@@ -237,10 +237,20 @@
 -46.502713,
 "endereco"
 ],
+"Avenida Doutor Chucri Zaidan, 1170": [
+-23.624728,
+-46.7003845,
+"endereco"
+],
 "Avenida Doutor Dante Pazzanese, 500": [
 -23.5847183,
 -46.6515992,
 "endereco"
+],
+"Avenida Doutor Felipe Pinel": [
+-23.4780281,
+-46.7325991,
+"rua"
 ],
 "Avenida Doutor Francisco Mesquita": [
 -23.589148,
@@ -769,6 +779,11 @@
 "Avenida Zelina, 577": [
 -23.5895551,
 -46.5783372,
+"endereco"
+],
+"Avenida das Nações Unidas, 14171": [
+-23.6229449,
+-46.7012982,
 "endereco"
 ],
 "Avenida do Estado, 1375": [
@@ -1635,6 +1650,11 @@
 -46.497762,
 "endereco"
 ],
+"Rua Canuto Saraiva, 452": [
+-23.562905,
+-46.6023883,
+"endereco"
+],
 "Rua Capitão Oliveira Carvalho, 527": [
 -23.439427,
 -46.728108,
@@ -2423,6 +2443,11 @@
 "Rua Etelvina, 381": [
 -23.515417,
 -46.527315,
+"endereco"
+],
+"Rua Etiópia, 196": [
+-23.6632575,
+-46.6034753,
 "endereco"
 ],
 "Rua Euclides da Cunha, 04": [
@@ -4481,9 +4506,19 @@
 -46.470257,
 "endereco"
 ],
+"Rua Tabajaras, 100": [
+-23.5618421,
+-46.6014335,
+"endereco"
+],
 "Rua Tabajaras, 478": [
 -23.564839,
 -46.599866,
+"endereco"
+],
+"Rua Tabajaras, 535": [
+-23.5653175,
+-46.5996361,
 "endereco"
 ],
 "Rua Taguató, 75": [
