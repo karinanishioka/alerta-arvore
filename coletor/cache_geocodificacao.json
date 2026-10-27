@@ -162,6 +162,7 @@
 -46.494913,
 "rua"
 ],
+"Avenida Cardeal Motta, 84": null,
 "Avenida Carlos Liviero, 946": [
 -23.646323,
 -46.595509,
@@ -378,6 +379,11 @@
 -23.553579,
 -46.492094,
 "rua"
+],
+"Avenida Itaquera, 5889": [
+-23.5508107,
+-46.4775741,
+"endereco"
 ],
 "Avenida Itaquera, 970": [
 -23.553858,
@@ -756,6 +762,11 @@
 -46.6997245,
 "endereco"
 ],
+"Avenida Sylvio Torres, 190": [
+-23.5534876,
+-46.4883143,
+"endereco"
+],
 "Avenida São Remo, 463": [
 -23.5647411,
 -46.7437502,
@@ -873,6 +884,11 @@
 -46.517688,
 "endereco"
 ],
+"Praça Dom Orione": [
+-23.5601676,
+-46.6458178,
+"rua"
+],
 "Praça Doutor Marcelo Tostes, 04": [
 -23.5360316,
 -46.5055723,
@@ -948,6 +964,11 @@
 "endereco"
 ],
 "Praça Sanap": null,
+"Praça São Gervásio": [
+-23.5298279,
+-46.5277853,
+"rua"
+],
 "Praça Tito Pacheco, 7": [
 -23.681987,
 -46.642568,
@@ -1359,6 +1380,11 @@
 -46.667613,
 "endereco"
 ],
+"Rua Augusto Correa Leite, 635": [
+-23.5015962,
+-46.5192428,
+"endereco"
+],
 "Rua Augusto Ostergreen, 115": null,
 "Rua Aurora das Dores, 505": [
 -23.575513,
@@ -1443,6 +1469,11 @@
 "Rua Bandeira Paulista, 439": [
 -23.5880518,
 -46.6745378,
+"endereco"
+],
+"Rua Barbosa Rodrigues, 42": [
+-23.5557604,
+-46.6558129,
 "endereco"
 ],
 "Rua Baroré, 284": [
@@ -1549,10 +1580,20 @@
 -46.7593182,
 "endereco"
 ],
+"Rua Benito Fioretto, 55": [
+-23.6212669,
+-46.6072543,
+"endereco"
+],
 "Rua Bento Gurgel de Salles": [
 -23.593315,
 -46.50777,
 "rua"
+],
+"Rua Bento Nunes de Siqueira, 379": [
+-23.5731961,
+-46.4820906,
+"endereco"
 ],
 "Rua Bento de Andrade, 560": [
 -23.584988,
@@ -1986,6 +2027,16 @@
 -46.5324402,
 "endereco"
 ],
+"Rua Correia Salgado, 170": [
+-23.5970799,
+-46.6109711,
+"endereco"
+],
+"Rua Correia Salgado, 256": [
+-23.5970799,
+-46.6109711,
+"endereco"
+],
 "Rua Correia de Almeida, 155": [
 -23.6326951,
 -46.6488563,
@@ -2064,6 +2115,11 @@
 "Rua Daniel Ribeiro Calado, 381": [
 -23.731566,
 -46.682116,
+"endereco"
+],
+"Rua Daniel Ribeiro Calado, 40": [
+-23.7315663,
+-46.6821161,
 "endereco"
 ],
 "Rua Dante Alighieri, 153": [
@@ -2167,6 +2223,11 @@
 -46.670854,
 "endereco"
 ],
+"Rua Domingos Simões": [
+-23.6080651,
+-46.7374559,
+"rua"
+],
 "Rua Domingos de Santa Maria, 205": [
 -23.6313379,
 -46.6356004,
@@ -2208,6 +2269,7 @@
 "endereco"
 ],
 "Rua Doutor Alfredo Francez, 162": null,
+"Rua Doutor Alfredo Francez, 89": null,
 "Rua Doutor Arnaldo Barbosa, 537": [
 -23.589997,
 -46.549003,
@@ -2693,6 +2755,11 @@
 -46.615644,
 "endereco"
 ],
+"Rua Friedrich Von Voith, 825": [
+-23.4328666,
+-46.7441629,
+"endereco"
+],
 "Rua Gago Coutinho, 186": [
 -23.5200672,
 -46.7086587,
@@ -2831,6 +2898,11 @@
 -46.647927,
 "rua"
 ],
+"Rua Gravataí, 87": [
+-23.5490214,
+-46.6480085,
+"endereco"
+],
 "Rua Gregório Ferreira": [
 -23.6950907,
 -46.6748164,
@@ -2944,6 +3016,11 @@
 -46.747545,
 "endereco"
 ],
+"Rua Ibitinga, 11": [
+-23.5678592,
+-46.5813825,
+"endereco"
+],
 "Rua Iborepi, 490": [
 -23.5331526,
 -46.4831438,
@@ -3044,6 +3121,11 @@
 -46.5745322,
 "endereco"
 ],
+"Rua Italva, 400": [
+-23.6243898,
+-46.605163,
+"endereco"
+],
 "Rua Itambé, 45": [
 -23.5458186,
 -46.652328,
@@ -3093,6 +3175,11 @@
 -23.6307245,
 -46.6383372,
 "endereco"
+],
+"Rua Jacob Roschel Christe": [
+-23.8093007,
+-46.7396354,
+"rua"
 ],
 "Rua Jacofer, 161": [
 -23.505167,
@@ -3234,6 +3321,11 @@
 -46.6679372,
 "endereco"
 ],
+"Rua José Freire Junior, 417": [
+-23.5141402,
+-46.4387134,
+"endereco"
+],
 "Rua José Getulio, 109": [
 -23.566925,
 -46.636129,
@@ -3247,6 +3339,11 @@
 "Rua José Guilger, 64": [
 -23.645899,
 -46.718107,
+"endereco"
+],
+"Rua José Lascano, 266": [
+-23.5000914,
+-46.4998087,
 "endereco"
 ],
 "Rua José Lascano, 84": [
@@ -3526,6 +3623,11 @@
 -46.64287,
 "endereco"
 ],
+"Rua Major Lucio Dias Ramos, 1130": [
+-23.7673939,
+-46.690637,
+"endereco"
+],
 "Rua Major Rudge, 37": [
 -23.520929,
 -46.542391,
@@ -3582,6 +3684,7 @@
 -46.663075,
 "endereco"
 ],
+"Rua Manuel Machado Nunes, 30": null,
 "Rua Manuel Pereira Guimarães, 516": [
 -23.643491,
 -46.702763,
@@ -3850,6 +3953,11 @@
 -46.501111,
 "endereco"
 ],
+"Rua Muniz de Sousa": [
+-23.5621073,
+-46.6239435,
+"rua"
+],
 "Rua Mário Augusto do Carmo, 319": [
 -23.586933,
 -46.569034,
@@ -3937,6 +4045,11 @@
 -46.6172258,
 "endereco"
 ],
+"Rua Oliveira Lima, 484": [
+-23.5675506,
+-46.6172013,
+"endereco"
+],
 "Rua Olympia Semeraro, 675": [
 -23.642059,
 -46.59269,
@@ -3953,6 +4066,11 @@
 "endereco"
 ],
 "Rua Ostenda V Vermelha, 90": null,
+"Rua Osvaldo Sobreira, 200": [
+-23.5155136,
+-46.5447594,
+"endereco"
+],
 "Rua Osvaldo Sobreira, 49": [
 -23.515514,
 -46.544759,
@@ -4003,6 +4121,11 @@
 -46.6687312,
 "endereco"
 ],
+"Rua Palestina, 483": [
+-23.6440518,
+-46.6682835,
+"endereco"
+],
 "Rua Panorama": [
 -23.463179,
 -46.610499,
@@ -4011,6 +4134,11 @@
 "Rua Parana, 181": [
 -23.9801646,
 -46.4504425,
+"endereco"
+],
+"Rua Paratiji, 92": [
+-23.5133659,
+-46.5471133,
 "endereco"
 ],
 "Rua Pascoal Gomes de Lima, 265": [
@@ -4182,6 +4310,11 @@
 -46.6706551,
 "endereco"
 ],
+"Rua Pombal, 443": [
+-23.5469417,
+-46.6780787,
+"endereco"
+],
 "Rua Pomerode, 165": [
 -23.6083119,
 -46.5284344,
@@ -4219,6 +4352,7 @@
 -46.670081,
 "endereco"
 ],
+"Rua Professor Orlando Marques Paiva, 87": null,
 "Rua Professor Oséias Silveira": [
 -23.58444,
 -46.730559,
@@ -4482,6 +4616,11 @@
 -46.7079,
 "endereco"
 ],
+"Rua Sebastião Sarmento Mena, 253": [
+-23.6344107,
+-46.6017484,
+"endereco"
+],
 "Rua Secundino Domingues, 756": [
 -23.5898326,
 -46.5584096,
@@ -4642,6 +4781,11 @@
 -46.5207812,
 "endereco"
 ],
+"Rua São Quintino, 352": [
+-23.5174324,
+-46.5207812,
+"endereco"
+],
 "Rua São Serapião, 865": [
 -23.5235497,
 -46.4965073,
@@ -4774,6 +4918,11 @@
 "endereco"
 ],
 "Rua Ttcel Jose Machado de Oliveira, 25": null,
+"Rua Tuiucuê, 103": [
+-23.6164684,
+-46.6228222,
+"endereco"
+],
 "Rua Tuiuti, 515": [
 -23.529715,
 -46.575726,
@@ -4940,6 +5089,11 @@
 -46.516226,
 "endereco"
 ],
+"Rua Xavier Curado, 37": [
+-23.5847166,
+-46.6082361,
+"endereco"
+],
 "Rua Zacarias de Brito, 143": [
 -23.532075,
 -46.496136,
@@ -5035,6 +5189,11 @@
 -46.7629875,
 "endereco"
 ],
+"Rua das Palmeiras, 240": [
+-23.5372638,
+-46.6513066,
+"endereco"
+],
 "Rua das Perobas, 173": [
 -23.642966,
 -46.643241,
@@ -5068,6 +5227,16 @@
 "Rua de Itacuruça, 182": [
 -23.6499261,
 -46.6643383,
+"endereco"
+],
+"Rua do Boqueirão, 305": [
+-23.6226031,
+-46.6119265,
+"endereco"
+],
+"Rua do Lavapés, 884": [
+-23.5598445,
+-46.6304566,
 "endereco"
 ],
 "Rua do Oratório, 2740": [
