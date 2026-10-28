@@ -741,6 +741,11 @@
 -46.673441,
 "rua"
 ],
+"Avenida Santa Inês, 2814": [
+-23.4753582,
+-46.6315617,
+"endereco"
+],
 "Avenida Santa Mônica": [
 -23.657945,
 -46.473883,
@@ -1304,6 +1309,11 @@
 "endereco"
 ],
 "Rua Arapás, 31": null,
+"Rua Arara -una, 121": [
+-23.5385605,
+-46.4002833,
+"endereco"
+],
 "Rua Araracanga, 461": [
 -23.5312446,
 -46.4702533,
@@ -1872,6 +1882,11 @@
 -46.546903,
 "endereco"
 ],
+"Rua Cipriano Barata, 201": [
+-23.5758775,
+-46.6063881,
+"endereco"
+],
 "Rua Claudia, 236": [
 -23.681259,
 -46.544876,
@@ -1920,6 +1935,11 @@
 "Rua Conselheiro Cotegipe, 574": [
 -23.5378796,
 -46.5881272,
+"endereco"
+],
+"Rua Conselheiro Elias de Carvalho, 169P": [
+-23.65217,
+-46.6584667,
 "endereco"
 ],
 "Rua Conselheiro Elias de Carvalho, 837": [
@@ -2057,6 +2077,11 @@
 -46.5559425,
 "endereco"
 ],
+"Rua Costa Aguiar, 1776": [
+-23.5897148,
+-46.6060959,
+"endereco"
+],
 "Rua Crato, 383": [
 -23.534069,
 -46.48499,
@@ -2110,6 +2135,11 @@
 "Rua D. Escolástica Melchert da Fonseca, 844": [
 -23.538706,
 -46.523595,
+"endereco"
+],
+"Rua Daniel Pereira, 238": [
+-23.4652704,
+-46.6783973,
 "endereco"
 ],
 "Rua Daniel Ribeiro Calado, 381": [
@@ -2211,6 +2241,11 @@
 "Rua Dom Duarte Leopoldo, 596": [
 -23.570018,
 -46.625435,
+"endereco"
+],
+"Rua Dom Mateus, 80": [
+-23.5753151,
+-46.6138992,
 "endereco"
 ],
 "Rua Domiciano Leite Ribeiro, 335": [
@@ -2748,6 +2783,11 @@
 "Rua Frederico Albuquerque, 120": [
 -23.663915,
 -46.659439,
+"endereco"
+],
+"Rua Frei Durão, 282": [
+-23.5897192,
+-46.615644,
 "endereco"
 ],
 "Rua Frei Durão, 285": [
@@ -3639,6 +3679,11 @@
 "endereco"
 ],
 "Rua Mamoneira, 38": null,
+"Rua Mamoré, 115": [
+-23.5253143,
+-46.6355865,
+"endereco"
+],
 "Rua Manaus, 111": [
 -23.564696,
 -46.5827429,
@@ -4671,6 +4716,11 @@
 -46.5836602,
 "endereco"
 ],
+"Rua Silva Bueno, 461": [
+-23.5823309,
+-46.6021724,
+"endereco"
+],
 "Rua Simone Martini": [
 -23.55894,
 -46.50873,
@@ -4947,6 +4997,11 @@
 -23.593213,
 -46.616991,
 "rua"
+],
+"Rua Umburetama, 253": [
+-23.593213,
+-46.6169914,
+"endereco"
 ],
 "Rua Urano, 157": [
 -23.569753,
