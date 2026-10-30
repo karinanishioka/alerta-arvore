@@ -488,6 +488,11 @@
 -46.4814062,
 "endereco"
 ],
+"Avenida Lopes de Azevedo, 1330": [
+-23.5850736,
+-46.7044517,
+"endereco"
+],
 "Avenida Lopes de Azevedo, 1336": [
 -23.585074,
 -46.704452,
@@ -524,6 +529,11 @@
 "Avenida Marechal Tito, 1200": [
 -23.49611,
 -46.39217,
+"endereco"
+],
+"Avenida Maria Coelho Aguiar, 215": [
+-23.6463828,
+-46.730499,
 "endereco"
 ],
 "Avenida Maria Luiza Americano, 2135": [
@@ -1802,6 +1812,11 @@
 -46.669591,
 "endereco"
 ],
+"Rua Bergson, 347": [
+-23.5330821,
+-46.7204365,
+"endereco"
+],
 "Rua Bernardo Pedroso, 406": [
 -23.609946,
 -46.526937,
@@ -2556,6 +2571,11 @@
 -46.617756,
 "endereco"
 ],
+"Rua Dona Elisa Pereira de Barros, 159": [
+-23.574579,
+-46.6910219,
+"endereco"
+],
 "Rua Dona Escolástica M. da Fonseca, 1130": [
 -23.5412464,
 -46.5230388,
@@ -2713,6 +2733,11 @@
 -46.586613,
 "endereco"
 ],
+"Rua Doutor Luís Augusto de Queirós Aranha, 576": [
+-23.5430469,
+-46.7075157,
+"endereco"
+],
 "Rua Doutor Luís Carlos, 701": [
 -23.535093,
 -46.54488,
@@ -2736,6 +2761,11 @@
 "Rua Doutor Mário Monteiro, 27": [
 -23.541875,
 -46.506561,
+"endereco"
+],
+"Rua Doutor Oscar Monteiro de Barros, 400": [
+-23.6186488,
+-46.7356375,
 "endereco"
 ],
 "Rua Doutor Ovídio Pires de Campos": [
@@ -3347,6 +3377,11 @@
 -46.541049,
 "endereco"
 ],
+"Rua Guaruva, 705": [
+-23.7105677,
+-46.7005781,
+"endereco"
+],
 "Rua Guimarães Passos, 76": [
 -23.57782,
 -46.634408,
@@ -3836,6 +3871,11 @@
 -46.647237,
 "endereco"
 ],
+"Rua João Pimentel Távora, 237": [
+-23.5854216,
+-46.549262,
+"endereco"
+],
 "Rua João Rodrigues Pires, 349": [
 -23.583238,
 -46.536566,
@@ -4036,6 +4076,11 @@
 -46.561897,
 "endereco"
 ],
+"Rua Lupe Cotrim Garaude": [
+-23.5868769,
+-46.5512508,
+"rua"
+],
 "Rua Lupércio de Camargo, 52": [
 -23.568465,
 -46.665755,
@@ -4215,6 +4260,11 @@
 "Rua Manuel Vieira da Luz, 441": [
 -23.4486275,
 -46.5825618,
+"endereco"
+],
+"Rua Manuel de Góis, 361": [
+-23.5846705,
+-46.700407,
 "endereco"
 ],
 "Rua Mar de Espanha, 193": [
@@ -5060,6 +5110,7 @@
 -46.4714785,
 "endereco"
 ],
+"Rua Rio Tocantis, 11": null,
 "Rua Rio Tocantis, 13": null,
 "Rua Rio da Bagagem, 126": [
 -23.5394366,
