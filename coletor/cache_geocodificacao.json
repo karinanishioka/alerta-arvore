@@ -965,6 +965,11 @@
 -46.595106,
 "endereco"
 ],
+"Largo de São Bento, 1": [
+-23.5439199,
+-46.6344316,
+"rua"
+],
 "Praça Adelina Tobias de Aguiar, 36": [
 -23.537655,
 -46.505528,
@@ -1020,6 +1025,11 @@
 "Praça Jequié, 38": [
 -23.4761133,
 -46.6806752,
+"endereco"
+],
+"Praça José Luz, 108": [
+-23.6461354,
+-46.6367428,
 "endereco"
 ],
 "Praça José Vicente Nobrega": [
@@ -1523,6 +1533,11 @@
 "Rua Ariti, 156": [
 -23.5071212,
 -46.5269118,
+"endereco"
+],
+"Rua Arlindo Veiga dos Santos, 25": [
+-23.6608131,
+-46.6903085,
 "endereco"
 ],
 "Rua Armindo Guaraná, 170": [
@@ -2170,6 +2185,11 @@
 -46.712876,
 "endereco"
 ],
+"Rua Comendador Elias Zarzur, 713": [
+-23.6466811,
+-46.6986692,
+"endereco"
+],
 "Rua Conde Moreira, 691": [
 -23.6593947,
 -46.6553977,
@@ -2561,6 +2581,11 @@
 -46.6320932,
 "endereco"
 ],
+"Rua Domingos Faustino Sarmiento, 422": [
+-23.7457905,
+-46.7120471,
+"endereco"
+],
 "Rua Domingos Fernandes, 583": [
 -23.592472,
 -46.670854,
@@ -2676,6 +2701,11 @@
 "Rua Doutor Edgar Garcia Vieira, 85": [
 -23.535692,
 -46.5331716,
+"endereco"
+],
+"Rua Doutor Emílio Ribas, 70": [
+-23.5359844,
+-46.6648605,
 "endereco"
 ],
 "Rua Doutor Guilherme Ellis, 85": [
@@ -3235,6 +3265,11 @@
 "endereco"
 ],
 "Rua Genaro Arilla Aresanz, 225": null,
+"Rua General Almério de Moura, 200": [
+-23.6137142,
+-46.70876,
+"endereco"
+],
 "Rua General Bagnuolo, 542": [
 -23.592498,
 -46.580232,
