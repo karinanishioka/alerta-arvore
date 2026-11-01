@@ -178,6 +178,11 @@
 -46.4843799,
 "endereco"
 ],
+"Avenida Cangaiba": [
+-23.5067831,
+-46.5323872,
+"rua"
+],
 "Avenida Cardeal Motta, 84": null,
 "Avenida Carlos Caldeira Filho": [
 -23.6445775,
@@ -5454,6 +5459,11 @@
 "Rua Solidônio Leite, 2597": [
 -23.5869171,
 -46.5342241,
+"endereco"
+],
+"Rua Soror Angélica, 521": [
+-23.5026137,
+-46.6439064,
 "endereco"
 ],
 "Rua Souto Soares, 273": [
