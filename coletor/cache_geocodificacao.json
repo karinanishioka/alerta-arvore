@@ -335,6 +335,11 @@
 "endereco"
 ],
 "Avenida Doze de Janeiro Até A Rua Iemanjá": null,
+"Avenida Elísio Teixeira Leite, 966": [
+-23.4675649,
+-46.7099527,
+"endereco"
+],
 "Avenida Engenheiro Oscar Americano": [
 -23.591762,
 -46.704078,
@@ -722,6 +727,11 @@
 -46.5031745,
 "endereco"
 ],
+"Avenida Paulo Guilguer Reimberg, 1851": [
+-23.8193776,
+-46.6749427,
+"endereco"
+],
 "Avenida Paulo Lincoln do Valle Pontin, 550": [
 -23.460534,
 -46.585488,
@@ -906,6 +916,11 @@
 "Avenida Sylvio Torres, 190": [
 -23.5534876,
 -46.4883143,
+"endereco"
+],
+"Avenida São João, 35": [
+-23.5455242,
+-46.6352373,
 "endereco"
 ],
 "Avenida São Miguel, 900": [
@@ -1184,6 +1199,7 @@
 "endereco"
 ],
 "Praça da Rua São Cirilo, 160": null,
+"Praça Álvaro Cardoso de Moura": null,
 "Praça É Nossa": null,
 "Rua Abilio Borin, 510": [
 -23.639823,
@@ -1214,6 +1230,11 @@
 -23.464475,
 -46.664593,
 "rua"
+],
+"Rua Agostinho Cantu, 473": [
+-23.5697952,
+-46.7048551,
+"endereco"
 ],
 "Rua Agostinho Gomes, 1941": [
 -23.58756,
@@ -2924,6 +2945,11 @@
 -46.7075157,
 "endereco"
 ],
+"Rua Doutor Luís Barreto, 243": [
+-23.5566173,
+-46.6473713,
+"endereco"
+],
 "Rua Doutor Luís Carlos, 701": [
 -23.535093,
 -46.54488,
@@ -3135,6 +3161,11 @@
 -23.497839,
 -46.451656,
 "endereco"
+],
+"Rua Estevão Ribeiro Garcia": [
+-23.495746,
+-46.3911087,
+"rua"
 ],
 "Rua Etelvina, 381": [
 -23.515417,
@@ -3613,6 +3644,16 @@
 "Rua Gustavo da Silveira, 1420": [
 -23.6563592,
 -46.6533333,
+"endereco"
+],
+"Rua Harmonia, 1275": [
+-23.5476173,
+-46.6919379,
+"endereco"
+],
+"Rua Helena Zerrener, 44": [
+-23.553796,
+-46.6288296,
 "endereco"
 ],
 "Rua Henri Dunant, 1099": [
@@ -4102,6 +4143,11 @@
 -46.647237,
 "endereco"
 ],
+"Rua João Passalaqua, 191": [
+-23.5547581,
+-46.6455233,
+"endereco"
+],
 "Rua João Pimentel Távora, 237": [
 -23.5854216,
 -46.549262,
@@ -4578,6 +4624,7 @@
 -46.576988,
 "endereco"
 ],
+"Rua Marechal Tito": null,
 "Rua Margarino Torres": null,
 "Rua Maria Carlota, 4": [
 -23.5253922,
@@ -6107,6 +6154,11 @@
 -46.472866,
 "endereco"
 ],
+"Rua Vitorio Ramalho, 80": [
+-23.5318357,
+-46.5624033,
+"endereco"
+],
 "Rua Vitória, 850": [
 -23.54102,
 -46.64427,
@@ -6335,6 +6387,11 @@
 "Rua dos Escultores, 220": [
 -23.540945,
 -46.7201532,
+"endereco"
+],
+"Rua dos Franceses, 152": [
+-23.5593592,
+-46.647721,
 "endereco"
 ],
 "Rua dos Ingleses, 542": [
