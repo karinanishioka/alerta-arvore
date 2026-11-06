@@ -1051,6 +1051,16 @@
 -46.6258665,
 "endereco"
 ],
+"Avenida Água Funda, 505": [
+-23.6378425,
+-46.6355061,
+"endereco"
+],
+"Avenida Água Funda, 545": [
+-23.6644518,
+-46.6131195,
+"endereco"
+],
 "Estrada Coronel José Gladiador, 436": [
 -23.447862,
 -46.795948,
@@ -1746,6 +1756,11 @@
 -46.5269118,
 "endereco"
 ],
+"Rua Arizona, 809": [
+-23.6268985,
+-46.5097637,
+"endereco"
+],
 "Rua Arlindo Veiga dos Santos, 25": [
 -23.6608131,
 -46.6903085,
@@ -1778,6 +1793,11 @@
 "endereco"
 ],
 "Rua Artur Lobo, 86": null,
+"Rua Artur de Azevedo, 1": [
+-23.5599897,
+-46.6773091,
+"endereco"
+],
 "Rua Artur de Azevedo, 1220": [
 -23.5631757,
 -46.6832983,
@@ -1949,6 +1969,11 @@
 -46.4597196,
 "endereco"
 ],
+"Rua Barbatimão do Nordeste, 200": [
+-23.5311185,
+-46.3999488,
+"endereco"
+],
 "Rua Barbosa Rodrigues, 42": [
 -23.5557604,
 -46.6558129,
@@ -1985,6 +2010,7 @@
 -46.410712,
 "endereco"
 ],
+"Rua Barão das Laranjeiras, 74": null,
 "Rua Barão de Cotegibe, 275": null,
 "Rua Barão de Cotegipe, 251": [
 -23.64004,
@@ -2464,6 +2490,11 @@
 "Rua Cinco de Outubro, 170": [
 -23.7394243,
 -46.6640716,
+"endereco"
+],
+"Rua Cipotuba, 37": [
+-23.6892084,
+-46.7770546,
 "endereco"
 ],
 "Rua Cipriano Barata, 1900": [
@@ -3066,6 +3097,11 @@
 -46.7593792,
 "endereco"
 ],
+"Rua Doutor Guilherme Cristofel, 340": [
+-23.4881356,
+-46.6294808,
+"endereco"
+],
 "Rua Doutor Guilherme Ellis, 85": [
 -23.5470579,
 -46.5962254,
@@ -3367,6 +3403,11 @@
 -23.567969,
 -46.630134,
 "endereco"
+],
+"Rua Estado do Ceará": [
+-23.5868497,
+-46.4945615,
+"rua"
 ],
 "Rua Estanislau de Miranda, 18": [
 -23.497839,
@@ -4074,6 +4115,11 @@
 -46.7472748,
 "endereco"
 ],
+"Rua Isidoro de Lara, 265": [
+-23.5449167,
+-46.4411131,
+"endereco"
+],
 "Rua Itabaiana, 29": [
 -23.658324,
 -46.548073,
@@ -4217,6 +4263,11 @@
 "Rua Joaquim Lopes, 41": [
 -23.615639,
 -46.733474,
+"endereco"
+],
+"Rua Joaquim Macedo, 95": [
+-23.5897877,
+-46.7034281,
 "endereco"
 ],
 "Rua Joaquim Marra, 437": [
@@ -4712,6 +4763,11 @@
 "Rua Maestro Cardim, 770": [
 -23.5676493,
 -46.6421748,
+"endereco"
+],
+"Rua Maestro Eduardo Guarnieri, 551": [
+-23.6981661,
+-46.7095665,
 "endereco"
 ],
 "Rua Maestro Eduardo de Guarniere, 318": null,
@@ -5890,6 +5946,11 @@
 -46.7237231,
 "endereco"
 ],
+"Rua Rosaria Chacon da Cunha, 57": [
+-23.8342855,
+-46.7255704,
+"endereco"
+],
 "Rua Rosentino de Souza, 70": null,
 "Rua Rui Martins, 169": [
 -23.564016,
@@ -6708,6 +6769,11 @@
 -46.694743,
 "endereco"
 ],
+"Rua das Aningas, 57": [
+-23.648026,
+-46.6484731,
+"endereco"
+],
 "Rua das Açucenas, 46": [
 -23.592584,
 -46.702943,
@@ -6876,6 +6942,11 @@
 "Travessa Miguel Ignacio Curi, 97": [
 -23.5471558,
 -46.4632774,
+"endereco"
+],
+"Travessa Quilaraiba, 165": [
+-23.7337748,
+-46.6687979,
 "endereco"
 ],
 "Travessa Roque Sálvia, 07": [
