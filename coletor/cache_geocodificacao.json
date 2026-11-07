@@ -512,6 +512,11 @@
 -46.565778,
 "endereco"
 ],
+"Avenida Jacu-pessego": [
+-23.5302004,
+-46.4565725,
+"rua"
+],
 "Avenida Jornalista Roberto Marinho, 85": [
 -23.611784,
 -46.697057,
@@ -1157,6 +1162,11 @@
 -46.7678979,
 "endereco"
 ],
+"Estrada do Campo Limpo, 291": [
+-23.6337902,
+-46.7739961,
+"endereco"
+],
 "Largo Nossa Senhora da Conceição, 13": [
 -23.5640769,
 -46.62947,
@@ -1693,6 +1703,11 @@
 "Rua Antonio Marques Juliao, 430": [
 -23.5995398,
 -46.5389511,
+"endereco"
+],
+"Rua Antonio Moura Andrade, 1074": [
+-23.5308251,
+-46.4440675,
 "endereco"
 ],
 "Rua Antonio Velho Tinoco, 33": [
@@ -4585,6 +4600,11 @@
 -46.647237,
 "endereco"
 ],
+"Rua João Julião, 295": [
+-23.568502,
+-46.6428808,
+"endereco"
+],
 "Rua João Passalaqua, 191": [
 -23.5547581,
 -46.6455233,
@@ -5600,6 +5620,11 @@
 -46.5444424,
 "endereco"
 ],
+"Rua Padre Orlando Nogueira, 235": [
+-23.511825,
+-46.4672846,
+"endereco"
+],
 "Rua Padre Raposo, 462": [
 -23.5601373,
 -46.5970035,
@@ -6441,9 +6466,19 @@
 -46.539626,
 "endereco"
 ],
+"Rua São Felix do Piauí": [
+-23.5488275,
+-46.4528963,
+"rua"
+],
 "Rua São Joao do Sabugi, 98": [
 -23.584159,
 -46.564745,
+"endereco"
+],
+"Rua São Joaquim, 320": [
+-23.5618144,
+-46.6354991,
 "endereco"
 ],
 "Rua São José das Espinharas, 400": [
