@@ -447,6 +447,16 @@
 -46.7133011,
 "endereco"
 ],
+"Avenida Giovanni Gronchi, 6829": [
+-23.6395715,
+-46.7364314,
+"endereco"
+],
+"Avenida Gonçalo de Paiva Gomes, 424": [
+-23.7147498,
+-46.6872804,
+"endereco"
+],
 "Avenida Guilherme Giorgi, 1611": [
 -23.560241,
 -46.543476,
@@ -5118,6 +5128,11 @@
 ],
 "Rua Marechal Tito": null,
 "Rua Margarino Torres": null,
+"Rua Maria Amália Lopes Azevedo, 3392": [
+-23.4573833,
+-46.5956179,
+"endereco"
+],
 "Rua Maria Carlota, 4": [
 -23.5253922,
 -46.528435,
