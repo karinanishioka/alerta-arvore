@@ -87,3 +87,57 @@ def test_somar_dias_uteis_pula_fim_de_semana():
 def test_prazo_reconsideracao_sem_parenteses():
     assert prazo_recurso("Aguarda-se o prazo de 15 dias para oferecimento de Pedido de Reconsideração a contar "
                          "da data da publicação deste despacho no Diário Oficial.") == (15, False)
+
+
+COSTA_BARRETO = """6046.2026/0015824-8 - Solicitação de Poda e Remoção de árvore externa
+Despacho deferido
+OS 15868700 – PRAÇA GENERAL COSTA BARRETO, - Supressão de 01 Ipê Rosa (Handroanthus Heptaphyllus)- 01 plantio de espécie de médio porte e 47 podas sendo 01 Areca bambú (Dypsis lutescens), 01 Cassia imperial (Cassia fistula), 02 Abacateiros (Persea americana), 06 Ficus (Ficus benjamina).
+A programação do serviço será em conformidade com a Lei Municipal nº 10.919/90. As pessoas ou entidades que discordarem, poderão apresentar recurso, devidamente fundamentado, no prazo de 06 (seis) dias, contados da data desta publicação."""
+
+
+def test_poda_e_remocao_no_mesmo_ato():
+    it = itens_de_documento(COSTA_BARRETO, {**META_MOOCA, "tipo_doc": "Despacho deferido"})[0]
+    assert (it["tipo"], it["remocoes"], it["podas"], it["arvores"]) == ("remocao", 1, 47, 48)
+
+
+def test_supressao_e_poda_na_mesma_frase():
+    txt = ("Solicitação de Poda e Remoção de Árvore Externa Despacho deferido DESPACHO: Defiro conforme laudo técnico (165750454) "
+           "a supressão de 01 (um) exemplar(es) arbóreo (s) e a poda de 03 exemplares arbóreos, todos Pinheiros chineses, "
+           "locado (s) em passeio público, na R. Senador Vergueiro, n° 243, Bairro: Santo Amaro")
+    it = itens_de_documento(txt, {**META_MOOCA, "orgao": "SUB-SA", "orgao_nome": "Subprefeitura Santo Amaro"})[0]
+    assert (it["remocoes"], it["podas"]) == (1, 3)
+
+
+def test_remocao_so_no_nome_do_pedido_vira_poda():
+    txt = ("Solicitação de Poda e Remoção de árvore externa Despacho deferido Assunto: Poda 1- Nos termos do Artigo 7 da Lei "
+           "17.794/2022 DEFERIMOS a poda de limpeza, equilíbrio, condução e adequação de 2 (duas) árvores na Rua Tuim, 300, "
+           "observado o Manual Técnico de Poda, em especial a remoção de no máximo 1/3 do volume da copa.")
+    it = itens_de_documento(txt, META_MOOCA)[0]
+    assert it["tipo"] == "poda" and "remocoes" not in it
+
+
+ADITIVO_TCA = """SEI nº 2012-0.129.846-2 Interessado: AVEIRO INCORPORACOES LTDA. Assunto: Aditivo 01 do TCA 117/2017 - Solicitação de manejo de vegetação arbórea, em decorrência de construção de edifícios de escritório, em imóvel localizado na Avenida Alcides Sangirardi, s/nº, Marginal Pinheiros, Butantã, São Paulo – SP;
+DESPACHO I – AUTORIZO a elaboração do ADITIVO-01 ao TCA n° 117/2017, para constar os seguintes termos atinentes ao manejo e compensação:
+Corte de: 44 (quarenta e quatro) árvores invasoras;
+Corte de: 94 (noventa e quatro) árvores exóticas;
+Corte de: 56 (cinquenta e seis) árvores nativas;
+Remoção de: 23 (vinte e três) árvores mortas;
+Transplante interno: 23 (vinte e três) exemplares;
+Preservadas: 26 (vinte e seis) exemplares arbóreos;
+Plantio interno de: 217 (duzentas e dezessete) mudas DAP 5,0 cm, de espécies nativas do Estado de São Paulo;
+Entrega de 8.983 mudas (1679 x 5,35) com DAP 3,0cm ao Viveiro Manequinho Lopes."""
+
+
+def test_soma_cortes_listados_por_categoria():
+    meta = {"orgao": "SVMA", "orgao_nome": "Secretaria do Verde e do Meio Ambiente", "assunto": "Despacho",
+            "tipo_doc": "Despacho", "documento": "2", "processo": "2012-0.129.846-2", "data": "2026-10-08", "url": "u",
+            "unidade": "SVMA/CLA"}
+    it = itens_de_documento(ADITIVO_TCA, meta)[0]
+    assert (it["tipo"], it["arvores"]) == ("remocao", 217)
+
+
+def test_total_repetido_conta_uma_vez():
+    from documento import servicos
+    txt = ("Assunto: Supressão de 27 (vinte e sete) exemplares arbóreos. Despacho: autorizo a supressão de 27 exemplares "
+           "arbóreos conforme laudo.")
+    assert servicos(txt) == (27, 0)
