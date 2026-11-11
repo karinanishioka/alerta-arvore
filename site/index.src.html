@@ -80,8 +80,10 @@ header p { margin: 8px 0 0; color: var(--tinta-2); max-width: 60ch; }
 .rot { width: 100%; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--tinta-2); font-weight: 600; margin-top: 6px; }
 .chip { border: 1px solid var(--linha); background: var(--papel); color: var(--tinta); border-radius: 999px; padding: 5px 12px; font: inherit; font-size: 13px; cursor: pointer; }
 .chip[aria-pressed="true"] { background: var(--tinta); color: var(--chao); border-color: var(--tinta); }
-select, input[type=search] { font: inherit; font-size: 14px; padding: 7px 10px; border-radius: 6px; border: 1px solid var(--linha); background: var(--papel); color: var(--tinta); min-width: 0; flex: 1 1 150px; }
+select, input[type=search], input[type=date] { font: inherit; font-size: 14px; padding: 7px 10px; border-radius: 6px; border: 1px solid var(--linha); background: var(--papel); color: var(--tinta); min-width: 0; flex: 1 1 150px; }
 
+.datas { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; width: 100%; font-size: 14px; color: var(--tinta-2); }
+.datas input { flex: 1 1 130px; }
 .contagem { font-size: 13px; color: var(--tinta-2); margin: 0; }
 .lista { display: flex; flex-direction: column; gap: 10px; }
 .caso { background: var(--papel); border: 1px solid var(--linha); border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; gap: 5px; cursor: pointer; scroll-margin: 12px; }
@@ -205,7 +207,19 @@ details.guia ol { padding-left: 20px; margin: 8px 0 0; display: grid; gap: 6px; 
         <option value="publica">Só em rua, praça ou parque</option>
         <option value="interna">Só em área particular</option>
       </select>
-      <input id="f-busca" type="search" placeholder="Rua, espécie ou nº do processo" aria-label="Buscar">
+      <input id="f-busca" type="search" placeholder="Rua, espécie ou nº do processo" aria-label="Buscar" style="flex-basis: 100%">
+      <span class="rot">Quando foi publicado</span>
+      <select id="f-periodo" aria-label="Período de publicação">
+        <option value="">Todo o período</option>
+        <option value="7">Últimos 7 dias</option>
+        <option value="30">Últimos 30 dias</option>
+        <option value="90">Últimos 3 meses</option>
+        <option value="datas">Escolher datas…</option>
+      </select>
+      <div class="datas" id="f-datas" hidden>
+        <label for="f-de">De</label><input id="f-de" type="date">
+        <label for="f-ate">até</label><input id="f-ate" type="date">
+      </div>
     </section>
 
     <p class="contagem" id="contagem" aria-live="polite"></p>
@@ -243,7 +257,7 @@ details.guia ol { padding-left: 20px; margin: 8px 0 0; display: grid; gap: 6px; 
   const POR_PAGINA = 60;
 
   let casos = [], subpLayer, marcadores = {}, ativo = null, mostrar = POR_PAGINA;
-  const filtro = { sit: "todas", tipo: "todos", sub: "", local: "", q: "" };
+  const filtro = { sit: "todas", tipo: "todos", sub: "", local: "", q: "", de: "", ate: "" };
 
   const mapa = L.map("mapa", { zoomControl: true, preferCanvas: true }).setView([-23.62, -46.62], 10);
   const tiles = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19, attribution: "© OpenStreetMap", opacity: 0.85 });
@@ -277,6 +291,8 @@ details.guia ol { padding-left: 20px; margin: 8px 0 0; display: grid; gap: 6px; 
     if (filtro.sit === "negada" && p.decisao !== "indeferido") return false;
     if (filtro.sub && p.subprefeitura !== filtro.sub) return false;
     if (filtro.local && p.local !== filtro.local) return false;
+    if (filtro.de && (p.data_publicacao || "") < filtro.de) return false;
+    if (filtro.ate && (p.data_publicacao || "") > filtro.ate) return false;
     if (filtro.q) {
       const alvo = [p.endereco, p.texto, p.processo_sei, (p.especies || []).join(" "), p.subprefeitura, p.assunto].join(" ").toLowerCase();
       if (!alvo.includes(filtro.q)) return false;
@@ -552,6 +568,21 @@ ${esc(servico(p)[0].toUpperCase() + servico(p).slice(1))} de ${esc(qtdTxt(p))} e
     if (alvo) mapa.fitBounds(alvo.getBounds(), { padding: [20, 20] }); else if (subpLayer) mapa.fitBounds(subpLayer.getBounds());
   });
   document.getElementById("f-local").addEventListener("change", e => { filtro.local = e.target.value; mostrar = POR_PAGINA; render(); });
+  const isoLocal = d => new Date(d.getTime() - d.getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
+  const fDe = document.getElementById("f-de"), fAte = document.getElementById("f-ate"), fDatas = document.getElementById("f-datas");
+  document.getElementById("f-periodo").addEventListener("change", e => {
+    const v = e.target.value;
+    fDatas.hidden = v !== "datas";
+    if (v === "datas") { filtro.de = fDe.value; filtro.ate = fAte.value; }
+    else if (v) { const d = new Date(HOJE); d.setDate(d.getDate() - (+v - 1)); filtro.de = isoLocal(d); filtro.ate = ""; }
+    else { filtro.de = filtro.ate = ""; }
+    mostrar = POR_PAGINA; render();
+  });
+  [fDe, fAte].forEach(i => i.addEventListener("change", () => {
+    filtro.de = fDe.value; filtro.ate = fAte.value;
+    if (filtro.de && filtro.ate && filtro.de > filtro.ate) { [filtro.de, filtro.ate] = [filtro.ate, filtro.de]; fDe.value = filtro.de; fAte.value = filtro.ate; }
+    mostrar = POR_PAGINA; render();
+  }));
   document.getElementById("f-busca").addEventListener("input", e => { filtro.q = e.target.value.trim().toLowerCase(); mostrar = POR_PAGINA; render(); });
 
   const json = u => fetch(u).then(r => { if (!r.ok) throw new Error(u + " " + r.status); return r.json(); });
@@ -571,6 +602,7 @@ ${esc(servico(p)[0].toUpperCase() + servico(p).slice(1))} de ${esc(qtdTxt(p))} e
 
     if (fc.atualizado_em) document.getElementById("atualizado").textContent = new Date(fc.atualizado_em).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
     const datas = fc.features.map(f => f.properties.data_publicacao).filter(Boolean).sort();
+    if (datas.length) [fDe, fAte].forEach(i => { i.min = datas[0]; i.max = datas[datas.length - 1]; });
     const periodo = document.getElementById("periodo");
     if (periodo && datas.length) periodo.textContent = `${fmt(datas[0])} a ${fmt(datas[datas.length - 1])}`;
 
