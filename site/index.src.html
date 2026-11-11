@@ -232,7 +232,7 @@ details.guia ol { padding-left: 20px; margin: 8px 0 0; display: grid; gap: 6px; 
   <div class="mapa-wrap">
     <div id="mapa" role="region" aria-label="Mapa dos casos"></div>
     <div class="legenda" aria-hidden="true">
-      <span><i style="background:var(--corte)"></i>Remoção</span>
+      <span><i style="background:var(--corte)"></i>Remoção (com ou sem poda)</span>
       <span><i style="background:var(--poda)"></i>Poda</span>
       <span><i style="border:3px solid var(--prazo)"></i>Prazo de recurso aberto</span>
       <span><i style="border:2px solid var(--negado)"></i>Pedido negado</span>
@@ -276,16 +276,18 @@ details.guia ol { padding-left: 20px; margin: 8px 0 0; display: grid; gap: 6px; 
 
   const ehRelato = p => p.origem === "relato";
   const cor = p => ehRelato(p) ? css("--relato") : p.decisao === "indeferido" ? css("--negado") : p.tipo === "poda" ? css("--poda") : p.tipo === "remocao" ? css("--corte") : css("--tinta-2");
+  const misto = p => !!(p.remocoes && p.podas);  // o mesmo ato autoriza remoção E poda
   const raio = p => 5 + Math.min(12, Math.sqrt(p.arvores || 1) * 2);
 
   function titulo(p) {
-    const n = p.arvores ? `${p.arvores} árvore${p.arvores > 1 ? "s" : ""}` : "Árvores";
+    const n = misto(p) ? `${p.remocoes} ${p.remocoes > 1 ? "remoções" : "remoção"} + ${p.podas} poda${p.podas > 1 ? "s" : ""}`
+      : p.arvores ? `${p.arvores} árvore${p.arvores > 1 ? "s" : ""}` : "Árvores";
     const onde = p.endereco || (p.subprefeitura ? `endereços em anexo · ${p.subprefeitura}` : "local não identificado");
     return `${n} · ${onde}`;
   }
 
   function visivel(p) {
-    if (filtro.tipo !== "todos" && (p.tipo !== filtro.tipo || ehRelato(p))) return false;
+    if (filtro.tipo !== "todos" && ((p.tipo !== filtro.tipo && !(filtro.tipo === "poda" && misto(p))) || ehRelato(p))) return false;
     if (filtro.sit === "prazo" && !prazoInfo(p)?.aberto) return false;
     if (filtro.sit === "autorizada" && !["deferido", "comunicado"].includes(p.decisao)) return false;
     if (filtro.sit === "negada" && p.decisao !== "indeferido") return false;
@@ -325,7 +327,9 @@ details.guia ol { padding-left: 20px; margin: 8px 0 0; display: grid; gap: 6px; 
     ["motivo", "A publicação não informa com clareza o motivo técnico da intervenção, o que impede a população de avaliá-la."],
   ];
   const hojeBR = () => new Date().toLocaleDateString("pt-BR", { day: "numeric", month: "long", year: "numeric" });
-  const servico = p => p.tipo === "poda" ? "poda" : p.tipo === "transplante" ? "transplante" : "remoção";
+  const servico = p => misto(p) ? "remoção e poda" : p.tipo === "poda" ? "poda" : p.tipo === "transplante" ? "transplante" : "remoção";
+  const arvTxt = n => `${n} árvore${n > 1 ? "s" : ""}`;
+  const descr = p => misto(p) ? `remoção de ${arvTxt(p.remocoes)} e poda de ${arvTxt(p.podas)}` : `${servico(p)} de ${qtdTxt(p)}`;
   const qtdTxt = p => p.arvores ? `${p.arvores} árvore${p.arvores > 1 ? "s" : ""}` : "árvore(s)";
   const ondeTxt = p => p.endereco || "endereço indicado na publicação";
   const procTxt = p => p.processo_sei ? `Processo SEI nº ${p.processo_sei}` : "Processo indicado na publicação";
@@ -337,7 +341,7 @@ details.guia ol { padding-left: 20px; margin: 8px 0 0; display: grid; gap: 6px; 
     return `À Subprefeitura ${p.subprefeitura || "[nome da subprefeitura]"}
 
 Ref.: ${procTxt(p)} — publicação no Diário Oficial da Cidade de ${fmt(p.data_publicacao)}
-Assunto: ${servico(p)} de ${qtdTxt(p)} em ${ondeTxt(p)}
+Assunto: ${descr(p)} em ${ondeTxt(p)}
 
 ${f.nome.trim() || "[seu nome completo]"}, residente em ${f.endereco.trim() || "[seu endereço]"}, vem, dentro do prazo indicado na publicação, apresentar RECURSO contra a ${servico(p)} acima, pelos seguintes motivos:
 
@@ -373,7 +377,7 @@ ${f.nome.trim() || "[seu nome completo]"}`;
     const linhas = Array.from({ length: 18 }, () => "<tr><td></td><td></td><td></td></tr>").join("");
     return `<h1>Lista de apoio ao recurso</h1>
 <p><b>${esc(procTxt(p))}</b> — Subprefeitura ${esc(p.subprefeitura || "")}<br>
-${esc(servico(p)[0].toUpperCase() + servico(p).slice(1))} de ${esc(qtdTxt(p))} em ${esc(ondeTxt(p))}, publicada no Diário Oficial da Cidade de ${esc(fmt(p.data_publicacao))}.</p>
+${esc(descr(p)[0].toUpperCase() + descr(p).slice(1))} em ${esc(ondeTxt(p))}, publicada no Diário Oficial da Cidade de ${esc(fmt(p.data_publicacao))}.</p>
 <p>Nós, moradores e frequentadores da região, apoiamos o recurso contra esta ${esc(servico(p))} e pedimos nova vistoria técnica com participação dos moradores.</p>
 <table><thead><tr><th style="width:38%">Nome</th><th style="width:37%">Endereço (rua e número)</th><th>Assinatura</th></tr></thead><tbody>${linhas}</tbody></table>`;
   }
@@ -473,7 +477,7 @@ ${esc(servico(p)[0].toUpperCase() + servico(p).slice(1))} de ${esc(qtdTxt(p))} e
 
   function card(p) {
     const tagClasse = ehRelato(p) ? "relato" : (p.tipo || "outro");
-    const tagTxt = ehRelato(p) ? "Relato" : (TIPO_NOME[p.tipo] || "Manejo");
+    const tagTxt = ehRelato(p) ? "Relato" : misto(p) ? "Remoção + poda" : (TIPO_NOME[p.tipo] || "Manejo");
     const pr = prazoInfo(p);
     const meta = [p.subprefeitura && `Subpref. ${p.subprefeitura}`, LOCAL_NOME[p.local], p.precisao === "subprefeitura" && "local aproximado", p.precisao === "rua" && "posição pela rua"].filter(Boolean).join(" · ");
     const c = el("article", { class: "caso" + (pr?.aberto ? " com-prazo" : ""), id: "caso-" + p.id, tabindex: "0" },
