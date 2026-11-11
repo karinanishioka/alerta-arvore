@@ -45,6 +45,11 @@
 -46.6689958,
 "endereco"
 ],
+"Alameda dos Araés, 544": [
+-23.6118367,
+-46.6514285,
+"endereco"
+],
 "Alameda dos Guainumbis, 115": [
 -23.611656,
 -46.646402,
@@ -577,6 +582,11 @@
 -46.5081034,
 "endereco"
 ],
+"Avenida Jandira, 831": [
+-23.6105572,
+-46.6580185,
+"endereco"
+],
 "Avenida Jornalista Roberto Marinho, 85": [
 -23.611784,
 -46.697057,
@@ -680,6 +690,11 @@
 "Avenida Marechal Tito, 1200": [
 -23.49611,
 -46.39217,
+"endereco"
+],
+"Avenida Marechal Tito, 6035": [
+-23.4924231,
+-46.3889814,
 "endereco"
 ],
 "Avenida Maria Coelho Aguiar, 215": [
@@ -899,6 +914,11 @@
 -46.644352,
 "endereco"
 ],
+"Avenida Piassanguaba, 2773": [
+-23.6238033,
+-46.6435426,
+"endereco"
+],
 "Avenida Pires do Rio, 2500": [
 -23.53551,
 -46.45563,
@@ -1003,6 +1023,11 @@
 -23.6278849,
 -46.6870261,
 "endereco"
+],
+"Avenida Ragueb Chohfi": [
+-23.5951229,
+-46.4314704,
+"rua"
 ],
 "Avenida Raimundo Pereira de Magalhaes, 3305": [
 -23.506231,
@@ -1359,6 +1384,11 @@
 -23.596607,
 -46.62721,
 "rua"
+],
+"Praça Ibrahim Nobre, 1": [
+-23.6906547,
+-46.560086,
+"endereco"
 ],
 "Praça Jequié, 38": [
 -23.4761133,
@@ -3521,6 +3551,11 @@
 -46.6317528,
 "endereco"
 ],
+"Rua Doutor Luiz Migliano, 190": [
+-23.6078377,
+-46.7478213,
+"endereco"
+],
 "Rua Doutor Luís Augusto de Queirós Aranha, 576": [
 -23.5430469,
 -46.7075157,
@@ -4801,6 +4836,11 @@
 -46.74703,
 "endereco"
 ],
+"Rua Joinville, 386": [
+-23.579954,
+-46.6521925,
+"endereco"
+],
 "Rua Jorge Soares": [
 -23.6734549,
 -46.7442318,
@@ -4824,6 +4864,11 @@
 "Rua Jose Peres Campelo, 757": [
 -23.498208,
 -46.716221,
+"endereco"
+],
+"Rua Jose Rufino da Silva, 249": [
+-23.7106884,
+-46.6858891,
 "endereco"
 ],
 "Rua Jose Secundino da Costa, 86": [
@@ -5040,6 +5085,11 @@
 "Rua Júlio Colaço, 1035": [
 -23.5365384,
 -46.5431903,
+"endereco"
+],
+"Rua Kansas, 51": [
+-23.6095812,
+-46.6774478,
 "endereco"
 ],
 "Rua Ken Sugaya, 209": [
@@ -5385,6 +5435,11 @@
 -46.495718,
 "endereco"
 ],
+"Rua Manoel Vitorino Pereira, 220": [
+-23.7310939,
+-46.698861,
+"endereco"
+],
 "Rua Mansores, 247": null,
 "Rua Mantiqueira, 202": [
 -23.6900236,
@@ -5682,6 +5737,11 @@
 "Rua Ministro Fonseca Filho, 21": [
 -23.4682393,
 -46.587054,
+"endereco"
+],
+"Rua Ministro Guimarães, 280": [
+-23.6172857,
+-46.750927,
 "endereco"
 ],
 "Rua Ministro Jesuíno Cardoso, 501": [
@@ -6532,6 +6592,11 @@
 -46.744449,
 "endereco"
 ],
+"Rua Rodesia, 256": [
+-23.5515926,
+-46.6913412,
+"endereco"
+],
 "Rua Rodolpho Barbosa de Castro, 20": [
 -23.5164625,
 -46.4600082,
@@ -6761,6 +6826,11 @@
 "Rua Senador Vergueiro, 243": [
 -23.678427,
 -46.544921,
+"endereco"
+],
+"Rua Senegal, 112": [
+-23.6575966,
+-46.6516764,
 "endereco"
 ],
 "Rua Serafim dos Anjos, 94": [
@@ -7605,6 +7675,11 @@
 -46.6042129,
 "endereco"
 ],
+"Rua dos Caciques, 19": [
+-23.6139354,
+-46.6327353,
+"endereco"
+],
 "Rua dos Curupiás, 230": [
 -23.6385141,
 -46.643587,
@@ -7663,6 +7738,11 @@
 "Travessa Miguel Ignacio Curi, 97": [
 -23.5471558,
 -46.4632774,
+"endereco"
+],
+"Travessa Ouro Preto, 55": [
+-23.5786236,
+-46.6848038,
 "endereco"
 ],
 "Travessa Quilaraiba, 165": [
