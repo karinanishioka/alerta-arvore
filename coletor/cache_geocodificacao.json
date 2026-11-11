@@ -24,6 +24,11 @@
 -46.6493681,
 "endereco"
 ],
+"Alameda Lorena, 807": [
+-23.5685346,
+-46.6611068,
+"endereco"
+],
 "Alameda Ribeiro da Silva, 275": [
 -23.5305671,
 -46.64635,
@@ -53,6 +58,11 @@
 "Alameda dos Guainumbis, 115": [
 -23.611656,
 -46.646402,
+"endereco"
+],
+"Alameda dos Guatás, 876": [
+-23.615625,
+-46.6462451,
 "endereco"
 ],
 "Alameda dos Nhambiquaras, 583": [
@@ -268,6 +278,11 @@
 "Avenida Cassandoca, 150": [
 -23.551159,
 -46.5946251,
+"endereco"
+],
+"Avenida Ceci, 393": [
+-23.6130937,
+-46.6530422,
 "endereco"
 ],
 "Avenida Cecí, 444": [
@@ -990,6 +1005,11 @@
 -46.6874864,
 "endereco"
 ],
+"Avenida Professor Abraão de Morais, 900": [
+-23.6094597,
+-46.6284316,
+"endereco"
+],
 "Avenida Professor Alceu Maynard Araújo, 44": [
 -23.635827,
 -46.712449,
@@ -1216,6 +1236,11 @@
 -46.7437502,
 "endereco"
 ],
+"Avenida Thomas Edison, 1250": [
+-23.5227122,
+-46.6661572,
+"endereco"
+],
 "Avenida Thomas Edison, 971": [
 -23.5168629,
 -46.6706272,
@@ -1274,6 +1299,11 @@
 "Avenida Zelina, 577": [
 -23.5895551,
 -46.5783372,
+"endereco"
+],
+"Avenida da Universidade, 200": [
+-23.5632518,
+-46.7146851,
 "endereco"
 ],
 "Avenida das Nações Unidas, 14171": [
@@ -1371,6 +1401,11 @@
 "Estrada da Riviera, 2282": [
 -23.706564,
 -46.741497,
+"endereco"
+],
+"Estrada das Lágrimas, 2317": [
+-23.6351915,
+-46.5782106,
 "endereco"
 ],
 "Estrada de Itapecerica, 7100": [
@@ -1522,6 +1557,7 @@
 -46.6174029,
 "rua"
 ],
+"Praça Lorenzetti. - Rua Presidente Almeida Couto, 63": null,
 "Praça Maiará, 65": null,
 "Praça Manoel Vicente Netto": [
 -23.5133,
@@ -1629,6 +1665,11 @@
 "Rua Abilio Borin, 510": [
 -23.639823,
 -46.718091,
+"endereco"
+],
+"Rua Abilio Ferreira Brandão, 171": [
+-23.4628309,
+-46.5837627,
 "endereco"
 ],
 "Rua Abraham Lincoln, 806": [
@@ -1826,6 +1867,7 @@
 -46.525527,
 "endereco"
 ],
+"Rua Alípio Martins": null,
 "Rua Amalia Cerelo Godespoti": [
 -23.6652465,
 -46.6722963,
@@ -2125,6 +2167,11 @@
 "Rua Araldo Ferreira Kluwe, 122": [
 -23.653345,
 -46.673126,
+"endereco"
+],
+"Rua Arapira, 77": [
+-23.5200264,
+-46.562409,
 "endereco"
 ],
 "Rua Arapá, 28": [
@@ -3613,6 +3660,11 @@
 -46.654497,
 "endereco"
 ],
+"Rua Doutor Albuquerque Lins, 804": [
+-23.5367725,
+-46.6576899,
+"endereco"
+],
 "Rua Doutor Alfredo Ellis, 53": [
 -23.5633136,
 -46.6442848,
@@ -3660,6 +3712,7 @@
 -46.7444243,
 "endereco"
 ],
+"Rua Doutor Carlos Norberto de Sousa Aranha, 547": null,
 "Rua Doutor Clementino, 579": [
 -23.542087,
 -46.591047,
@@ -3895,6 +3948,11 @@
 -46.5677424,
 "endereco"
 ],
+"Rua Doutor Vito Rolim de Freitas, 421": [
+-23.6437658,
+-46.705253,
+"endereco"
+],
 "Rua Dráusio, 26": [
 -23.664562,
 -46.5932261,
@@ -3913,6 +3971,11 @@
 "Rua Durande, 176": [
 -23.538227,
 -46.483791,
+"endereco"
+],
+"Rua Edgar de Azevedo Soares, 165": [
+-23.5367988,
+-46.5242839,
 "endereco"
 ],
 "Rua Edgar de Campos": null,
@@ -4381,6 +4444,11 @@
 -46.648477,
 "endereco"
 ],
+"Rua França Pinto, 783": [
+-23.5887285,
+-46.6435956,
+"endereco"
+],
 "Rua Frederico Albuquerque, 120": [
 -23.663915,
 -46.659439,
@@ -4644,6 +4712,11 @@
 "Rua Guaperuvu, 174": [
 -23.536232,
 -46.538693,
+"endereco"
+],
+"Rua Guapiaçu, 339": [
+-23.6054899,
+-46.6478745,
 "endereco"
 ],
 "Rua Guaporé, 443": [
@@ -4914,6 +4987,11 @@
 "Rua Ipanema, 686": [
 -23.5465136,
 -46.6054729,
+"endereco"
+],
+"Rua Irapará, 150": [
+-23.6224124,
+-46.7244909,
 "endereco"
 ],
 "Rua Irineu Galllo, 147": null,
@@ -6864,9 +6942,24 @@
 "rua"
 ],
 "Rua Praia de Mucuripe, 50": null,
+"Rua Presidente Barão de Guajara, 24": [
+-23.5661246,
+-46.6081033,
+"endereco"
+],
+"Rua Presidente Batista Pereira, 13": [
+-23.5672131,
+-46.605294,
+"endereco"
+],
 "Rua Presidente Batista Pereira, 315": [
 -23.5672131,
 -46.605294,
+"endereco"
+],
+"Rua Presidente Soares Brandão, 10": [
+-23.5672675,
+-46.6080703,
 "endereco"
 ],
 "Rua Preta": [
@@ -7201,6 +7294,11 @@
 "Rua Santa Luzia, 21": [
 -23.4355518,
 -46.5783309,
+"endereco"
+],
+"Rua Santa Marcelina, 509": [
+-23.5585431,
+-46.4591249,
 "endereco"
 ],
 "Rua Santa, 95": [
