@@ -123,6 +123,8 @@ def escrever_feed(feats):
         data = p.get("data_publicacao")
         pub = email.utils.format_datetime(dt.datetime.fromisoformat(data + "T12:00:00-03:00")) if data else ""
         qtd = f"{p['arvores']} árvore(s)" if p.get("arvores") else "árvore(s)"
+        if p.get("remocoes") and p.get("podas"):
+            nome, qtd = "Remoção e poda", f"{p['remocoes']} + {p['podas']} árvore(s)"
         prazo = f" — recurso até {dt.date.fromisoformat(p['prazo_ate']).strftime('%d/%m')}" if p.get("prazo_ate") else ""
         titulo = f"{nome} de {qtd} — {p.get('endereco') or 'endereço em anexo'}{prazo}"
         itens.append(f"""<item><title>{escape(titulo)}</title>

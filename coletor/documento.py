@@ -140,6 +140,58 @@ def _tipo(*trechos: str) -> str | None:
     return None
 
 
+# ------------------------------------------------------------------ poda E remoção no mesmo ato
+# "Solicitação de Poda e Remoção" é o nome do tipo de pedido, não diz o que foi autorizado.
+RE_TITULO_PAR = re.compile(r"poda\s*(?:e\s*/\s*ou|e|ou|/)\s*(?:remo[cç][aã]o|supress[aã]o)|"
+                           r"(?:remo[cç][aã]o|supress[aã]o)\s*(?:e\s*/\s*ou|e|ou|/)\s*poda", re.I)
+# número com o "(por extenso)" opcional; o parêntese precisa ter número por extenso ("215 (DEFERIDO)" não é quantidade)
+_EXTENSO_PAR = (r"\((?=[^)]*\b(?:uma?|dois|duas|tr[eê]s|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|[cq]uatorze|quinze|"
+                r"dez\w+|vinte|trinta|quarenta|cinq?uenta|sessenta|setenta|oitenta|noventa|cem|cento|duzent\w*|trezent\w*|"
+                r"quatrocent\w*|quinhent\w*)\b)[^)]{2,45}\)")
+_N = r"(\d{1,3})\s*(?:" + _EXTENSO_PAR + r")?\s*"
+_ALVO_ARV = r"(?:exemplar|[aá]rvore|indiv[ií]duo|palmeira|esp[eé]cime)"
+_ATE = lambda outro: rf"(?:(?!{outro})[^.;:]){{0,140}}?"
+RE_N_REMOCAO = [
+    re.compile(r"(?:supress|remo[cç]|corte)\w*\s*(?:(?:de|do|dos|das)\b\s*)?:?\s*(?:at[eé]\s+)?" + _N, re.I),
+    re.compile(r"(?:supress|remo[cç]|corte)\w*" + _ATE(r"poda|supress|remo[cç]") + r"\b" + _N + _ALVO_ARV, re.I),
+    re.compile(r"\b" + _N + r"(?:supress[oõ]es|remo[cç][oõ]es|cortes)\b", re.I),  # "02 supressões"
+]
+RE_N_PODA = [
+    re.compile(r"\bpodas?\b" + _ATE(r"supress|remo[cç]|corte|poda") + r"\b" + _N + _ALVO_ARV, re.I),
+    re.compile(r"\bpodas?\s+(?:de\s+|em\s+)?(?:at[eé]\s+)?" + _N, re.I),
+    re.compile(r"\b" + _N + r"podas?\b", re.I),
+]
+
+
+def _somar_qtd(rxs, t: str) -> int:
+    """Quantas árvores o ato cita para o serviço.
+    Lista por categoria ("Corte de: 44 invasoras; Corte de: 94 exóticas; Remoção de: 23 mortas") → soma os itens.
+    Fora disso → o maior número citado: o mesmo total costuma ser repetido no texto."""
+    achados = {}
+    for rx in rxs:
+        for m in rx.finditer(t):
+            n = int(m.group(1))
+            antes, depois = t[max(0, m.start() - 60):m.start()], t[m.end(1):m.end(1) + 12]
+            if n <= 0 or n >= 500:
+                continue
+            if re.match(r"\s*(?:%|/|\.\d|por\s*cento)", depois, re.I):
+                continue  # "remoção de no máximo 1/3 da copa", "poda de até 30%"
+            if re.search(r"indef|n[aã]o\s+autoriz|\bnego\b", antes, re.I):
+                continue  # "INDEFIRO o pedido de supressão de 148"
+            item_lista = ":" in t[m.start():m.start(1)]
+            achados.setdefault(m.start(1), (n, item_lista))
+    lista = [n for n, item in achados.values() if item]
+    if len(lista) >= 2:
+        return sum(lista)
+    return max((n for n, _ in achados.values()), default=0)
+
+
+def servicos(t: str) -> tuple[int, int]:
+    """Quantas remoções e quantas podas o ato autoriza, quando diz com número (0 = não diz)."""
+    t = RE_TITULO_PAR.sub(" ", t or "")
+    return _somar_qtd(RE_N_REMOCAO, t), _somar_qtd(RE_N_PODA, t)
+
+
 def _decisao_doc(tipo_doc: str | None, texto: str) -> str | None:
     t = sem_acento(tipo_doc or "").lower()
     if "indefer" in t:
@@ -225,6 +277,15 @@ def itens_de_documento(texto: str, meta: dict) -> list[dict]:
         it["arvores"] = (qs[0] if qs else None) or (_qtd(janela, janela) if janela else None) or (None if multi else _qtd(t, t))
         if it["arvores"] and it["arvores"] > 60 and not re.search(rf"\b0*{it['arvores']}\s*\(", alvo):
             it["arvores"] = None  # número grande sem o "(por extenso)" costuma ser outro número
+        if not multi:
+            rem, pod = servicos(t)
+            if rem and pod:  # "Supressão de 01 Ipê ... e 47 podas": as duas coisas, com quantidades separadas
+                it["tipo"], it["remocoes"], it["podas"] = "remocao", rem, pod
+                it["arvores"] = rem + pod
+            elif rem and it["tipo"] == "remocao" and rem > (it["arvores"] or 0):
+                it["arvores"] = rem  # remoções listadas em várias linhas (por categoria ou espécie)
+            elif pod and it["tipo"] == "remocao":
+                it["tipo"] = "poda"  # "remoção" só no nome do pedido ou em regra geral ("remoção de 1/3 da copa")
         it["especies"] = _especies(alvo)
         if pr and data and it["decisao"] != "indeferido":
             it["prazo_recurso_dias"], it["prazo_dias_uteis"] = pr
