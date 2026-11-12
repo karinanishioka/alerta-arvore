@@ -632,6 +632,11 @@
 -46.5081034,
 "endereco"
 ],
+"Avenida Jamaris, 387": [
+-23.6063716,
+-46.6598183,
+"endereco"
+],
 "Avenida Jandira, 831": [
 -23.6105572,
 -46.6580185,
@@ -1569,6 +1574,11 @@
 "Praça Monsenhor José Maria Monteiro, 28": [
 -23.5396172,
 -46.7032073,
+"endereco"
+],
+"Praça Nossa Senhora Aparecida, 103": [
+-23.6029556,
+-46.660292,
 "endereco"
 ],
 "Praça Nossa Senhora da Guia, 47": [
@@ -5415,6 +5425,7 @@
 -46.5683877,
 "endereco"
 ],
+"Rua Joâo Gottifritz, 65": null,
 "Rua João Accioli, 154": [
 -23.5465171,
 -46.5133474,
