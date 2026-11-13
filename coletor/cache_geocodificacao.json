@@ -320,6 +320,11 @@
 -46.624922,
 "endereco"
 ],
+"Avenida D. Belmira Marin": [
+-23.7329016,
+-46.6968535,
+"rua"
+],
 "Avenida Damasceno Vieira, 1173": [
 -23.646252,
 -46.664699,
@@ -590,6 +595,11 @@
 "Avenida Interlagos, 6535": [
 -23.6864561,
 -46.6939706,
+"endereco"
+],
+"Avenida Irerê, 1431": [
+-23.6232306,
+-46.6475618,
 "endereco"
 ],
 "Avenida Itacira, 1490": [
@@ -969,6 +979,7 @@
 -46.6749427,
 "endereco"
 ],
+"Avenida Paulo Guilgues Reimberg": null,
 "Avenida Paulo Lincoln do Valle Pontin, 550": [
 -23.460534,
 -46.585488,
@@ -1035,6 +1046,7 @@
 -46.6533828,
 "endereco"
 ],
+"Avenida Professor Doutor Orlando Marques de Paiva, 87": null,
 "Avenida Professor Edgar Santos, 1097": [
 -23.552989,
 -46.492603,
@@ -1377,6 +1389,11 @@
 -46.4757993,
 "rua"
 ],
+"Estrada Cocaia": [
+-23.7463594,
+-46.6716706,
+"rua"
+],
 "Estrada Coronel José Gladiador, 436": [
 -23.447862,
 -46.795948,
@@ -1524,6 +1541,11 @@
 "Praça Ibrahim Nobre, 1": [
 -23.6906547,
 -46.560086,
+"endereco"
+],
+"Praça Irmãos Karman, 111": [
+-23.5418135,
+-46.6772609,
 "endereco"
 ],
 "Praça Jequié, 38": [
@@ -2734,6 +2756,11 @@
 -46.667527,
 "endereco"
 ],
+"Rua Brás Cardoso, 330": [
+-23.5932053,
+-46.6689003,
+"endereco"
+],
 "Rua Bucuituba, 707": [
 -23.578962,
 -46.54474,
@@ -3110,6 +3137,11 @@
 "Rua Claudio Ptolomeu, 605": [
 -23.5315541,
 -46.4756104,
+"endereco"
+],
+"Rua Clodomiro Pereira, 109": [
+-23.5736318,
+-46.6167879,
 "endereco"
 ],
 "Rua Clodomiro Pereira, 14": [
@@ -3717,6 +3749,11 @@
 ],
 "Rua Doutor Alfredo Francez, 162": null,
 "Rua Doutor Alfredo Francez, 89": null,
+"Rua Doutor Amâncio de Carvalho, 344": [
+-23.5841807,
+-46.6479941,
+"endereco"
+],
 "Rua Doutor Arnaldo Barbosa, 537": [
 -23.589997,
 -46.549003,
@@ -4027,6 +4064,11 @@
 "Rua Edimburgo, 123": [
 -23.509185,
 -46.537395,
+"endereco"
+],
+"Rua Edmundo Carvalho, 777": [
+-23.6292486,
+-46.59555,
 "endereco"
 ],
 "Rua Edson Carneiro": [
@@ -4842,6 +4884,11 @@
 -46.6919379,
 "endereco"
 ],
+"Rua Havaí, 837": [
+-23.539853,
+-46.6893008,
+"endereco"
+],
 "Rua Helena Zerrener, 44": [
 -23.553796,
 -46.6288296,
@@ -5060,6 +5107,11 @@
 -46.7244909,
 "endereco"
 ],
+"Rua Iraúna, 643": [
+-23.6090499,
+-46.6737662,
+"endereco"
+],
 "Rua Irineu Galllo, 147": null,
 "Rua Irineu Marinho, 677": [
 -23.644688,
@@ -5174,6 +5226,16 @@
 "Rua Itinguçu, 481": [
 -23.523835,
 -46.51022,
+"endereco"
+],
+"Rua Itália Fausto, 58": [
+-23.5750393,
+-46.6184125,
+"endereco"
+],
+"Rua Itália Fausto, 79": [
+-23.5750393,
+-46.6184125,
 "endereco"
 ],
 "Rua Jaborandi, 570": [
@@ -5324,6 +5386,11 @@
 "Rua Joinville, 386": [
 -23.579954,
 -46.6521925,
+"endereco"
+],
+"Rua Jonatas Serrano, 621": [
+-23.744602,
+-46.6823876,
 "endereco"
 ],
 "Rua Jorge Soares": [
@@ -5593,6 +5660,11 @@
 -46.586175,
 "endereco"
 ],
+"Rua Jurandir Pais Leme, 109": [
+-23.5258083,
+-46.4189313,
+"endereco"
+],
 "Rua Jurubeba do Campo, 346": [
 -23.6054719,
 -46.5352931,
@@ -5648,6 +5720,16 @@
 -46.669112,
 "endereco"
 ],
+"Rua Lauriano Fernandes Júnior": [
+-23.5201658,
+-46.7305806,
+"rua"
+],
+"Rua Lauriano Fernandes Júnior, 130": [
+-23.5198331,
+-46.7291763,
+"endereco"
+],
 "Rua Leandro de Carvalho, 136": [
 -23.5696256,
 -46.6125385,
@@ -5697,6 +5779,11 @@
 "Rua Libero de Miranda, 99": [
 -23.464458,
 -46.582546,
+"endereco"
+],
+"Rua Liege, 27": [
+-23.6266147,
+-46.6002191,
 "endereco"
 ],
 "Rua Lins, 26": [
@@ -6059,6 +6146,11 @@
 -46.6415368,
 "endereco"
 ],
+"Rua Marco Bertuolo, 126": [
+-23.6203127,
+-46.6092987,
+"endereco"
+],
 "Rua Marco Polo, 905": [
 -23.5011579,
 -46.4885546,
@@ -6230,6 +6322,11 @@
 ],
 "Rua Matilde de Lutis Barbosa, 13": null,
 "Rua Matteo Giovanetti, 2": null,
+"Rua Maurício Francisco Klabin, 534": [
+-23.5944025,
+-46.6327189,
+"endereco"
+],
 "Rua Maçarico, 50": [
 -23.783451,
 -46.692981,
@@ -6659,6 +6756,11 @@
 -46.667356,
 "endereco"
 ],
+"Rua Otávio Nébias, 103": [
+-23.5732846,
+-46.6501332,
+"endereco"
+],
 "Rua Ouricana, 150": [
 -23.6430726,
 -46.6350555,
@@ -6667,6 +6769,11 @@
 "Rua Ouvidor Portugal, 48": [
 -23.5678205,
 -46.6135554,
+"endereco"
+],
+"Rua Ouvidor Portugal, 492": [
+-23.5716446,
+-46.6130932,
 "endereco"
 ],
 "Rua Ouvidor Portugal, 541": [
@@ -6920,6 +7027,11 @@
 "Rua Peixoto Gomide, 949": [
 -23.5598599,
 -46.6560657,
+"endereco"
+],
+"Rua Pelotas, 341": [
+-23.5819843,
+-46.6453185,
 "endereco"
 ],
 "Rua Pereira da Nóbrega, 497": [
@@ -7490,6 +7602,11 @@
 ],
 "Rua Sargento Tomas de Medeiros, 40": null,
 "Rua Sargento Tomás de Medeiros": null,
+"Rua Saturnino Pereira, 249": [
+-23.544766,
+-46.4113406,
+"endereco"
+],
 "Rua Savigni, 98": [
 -23.5999936,
 -46.5669345,
