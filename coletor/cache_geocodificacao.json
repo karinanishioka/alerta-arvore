@@ -9,6 +9,11 @@
 -46.666236,
 "endereco"
 ],
+"Alameda Gabriel Monteiro da Silva, 2628": [
+-23.5767695,
+-46.691614,
+"endereco"
+],
 "Alameda Jauaperi, 890": [
 -23.60425,
 -46.6668764,
@@ -883,6 +888,11 @@
 -46.594854,
 "rua"
 ],
+"Avenida Nagib Farah Maluf, 879": [
+-23.5475541,
+-46.4359254,
+"endereco"
+],
 "Avenida Nazareth": [
 -23.4765536,
 -46.7180692,
@@ -1182,6 +1192,11 @@
 -46.64562,
 "endereco"
 ],
+"Avenida Rio das Pedras, 2022": [
+-23.5709113,
+-46.5077134,
+"endereco"
+],
 "Avenida Roque Petroni Junior, 630": [
 -23.622747,
 -46.69314,
@@ -1449,6 +1464,11 @@
 -23.6337902,
 -46.7739961,
 "endereco"
+],
+"Largo Nossa Senhora da Conceição": [
+-23.5645091,
+-46.6290558,
+"rua"
 ],
 "Largo Nossa Senhora da Conceição, 13": [
 -23.5640769,
@@ -1897,6 +1917,11 @@
 "Rua Alvarenga": [
 -23.5724455,
 -46.7113631,
+"rua"
+],
+"Rua Alves Guimarães": [
+-23.55757,
+-46.6769558,
 "rua"
 ],
 "Rua Alves Ribeiro, 93": [
@@ -2578,6 +2603,11 @@
 -46.618302,
 "endereco"
 ],
+"Rua Barão de Jaguará, 344": [
+-23.5592688,
+-46.6183019,
+"endereco"
+],
 "Rua Barão de Penedo, 29": [
 -23.5544,
 -46.5811694,
@@ -2679,6 +2709,11 @@
 -23.584988,
 -46.669591,
 "endereco"
+],
+"Rua Bento dos Reis": [
+-23.5514319,
+-46.443632,
+"rua"
 ],
 "Rua Bergson, 347": [
 -23.5330821,
@@ -3039,6 +3074,11 @@
 -46.680537,
 "endereco"
 ],
+"Rua Cazerio Lembo, 295": [
+-23.6364435,
+-46.6343629,
+"endereco"
+],
 "Rua Celestino Augusto Ribeiro, 117": [
 -23.513558,
 -46.53552,
@@ -3100,6 +3140,11 @@
 "endereco"
 ],
 "Rua Cidade de Bagdá, 427": [
+-23.6545748,
+-46.6519296,
+"endereco"
+],
+"Rua Cidade de Bagdá, 542": [
 -23.6545748,
 -46.6519296,
 "endereco"
@@ -3308,6 +3353,11 @@
 "Rua Coronel João Dente, 28": [
 -23.5568065,
 -46.6122893,
+"endereco"
+],
+"Rua Coronel João Dente, 285": [
+-23.556787,
+-46.6123748,
 "endereco"
 ],
 "Rua Coronel João Gabi, 22": [
@@ -3595,6 +3645,11 @@
 "Rua Djalma Correia, 300": [
 -23.665436,
 -46.673719,
+"endereco"
+],
+"Rua Djalma Pessolato, 410": [
+-23.7052025,
+-46.6890966,
 "endereco"
 ],
 "Rua Dobrada, 264": [
@@ -3995,6 +4050,11 @@
 -46.674187,
 "endereco"
 ],
+"Rua Doutor Ricardo Batista, 35": [
+-23.5520855,
+-46.6441662,
+"endereco"
+],
 "Rua Doutor Sabóia de Medeiros": [
 -23.596787,
 -46.628096,
@@ -4008,6 +4068,11 @@
 "Rua Doutor Saul de Camargo Neves, 248": [
 -23.5083088,
 -46.4993836,
+"endereco"
+],
+"Rua Doutor Sodré, 30": [
+-23.5919778,
+-46.6740499,
 "endereco"
 ],
 "Rua Doutor Suzano Brandão, 932": [
@@ -4526,6 +4591,11 @@
 -46.4803046,
 "endereco"
 ],
+"Rua Franklin Magalhães, 974": [
+-23.6523563,
+-46.6569696,
+"endereco"
+],
 "Rua França Carvalho, 153": [
 -23.552058,
 -46.451874,
@@ -4711,6 +4781,11 @@
 -46.6375563,
 "endereco"
 ],
+"Rua Giacomo Perti, 76": [
+-23.5439704,
+-46.4379226,
+"endereco"
+],
 "Rua Giestas, 186": [
 -23.5947314,
 -46.5777886,
@@ -4800,6 +4875,11 @@
 "Rua Grão Mongol, 516": [
 -23.6052062,
 -46.5598687,
+"endereco"
+],
+"Rua Grécia, 513": [
+-23.574978,
+-46.6854359,
 "endereco"
 ],
 "Rua Guacuma, 99": [
@@ -5393,6 +5473,11 @@
 -46.6823876,
 "endereco"
 ],
+"Rua Jorge Miranda, 700": [
+-23.5317837,
+-46.6292815,
+"endereco"
+],
 "Rua Jorge Soares": [
 -23.6734549,
 -46.7442318,
@@ -5501,6 +5586,11 @@
 "Rua José Eloi Bezerra, 12": [
 -23.5216922,
 -46.5440477,
+"endereco"
+],
+"Rua José Feliciano, 28": [
+-23.6447001,
+-46.6679372,
 "endereco"
 ],
 "Rua José Feliciano, 96": [
@@ -5685,6 +5775,11 @@
 -46.5278268,
 "endereco"
 ],
+"Rua Juventus, 577": [
+-23.5721875,
+-46.5893787,
+"endereco"
+],
 "Rua Júlio Colaço, 1035": [
 -23.5365384,
 -46.5431903,
@@ -5821,6 +5916,11 @@
 -46.6561774,
 "endereco"
 ],
+"Rua Lourenço de Almeida, 410": [
+-23.5907249,
+-46.6671772,
+"endereco"
+],
 "Rua Luar da Minha Terra, 200": [
 -23.6920856,
 -46.7129743,
@@ -5842,6 +5942,11 @@
 "endereco"
 ],
 "Rua Luis Antonio Rantim Moutinho, 265": null,
+"Rua Luis Asson, 221": [
+-23.5156096,
+-46.5159933,
+"endereco"
+],
 "Rua Luis Goncalves, 111": [
 -23.5854869,
 -46.5396397,
@@ -6146,9 +6251,19 @@
 -46.6415368,
 "endereco"
 ],
+"Rua Marco Aurélio, 666": [
+-23.5330518,
+-46.6988853,
+"endereco"
+],
 "Rua Marco Bertuolo, 126": [
 -23.6203127,
 -46.6092987,
+"endereco"
+],
+"Rua Marco Polo, 466": [
+-23.5011579,
+-46.4885546,
 "endereco"
 ],
 "Rua Marco Polo, 905": [
@@ -6514,6 +6629,7 @@
 -46.4952818,
 "endereco"
 ],
+"Rua Monte Car, 1319": null,
 "Rua Monte dos Apalaches, 556": null,
 "Rua Monteiro Soares Filho, 449": [
 -23.588471,
@@ -6723,6 +6839,11 @@
 "Rua Omacha, 13": [
 -23.5191712,
 -46.5391924,
+"endereco"
+],
+"Rua Orlando Fratucelli, 150": [
+-23.5205236,
+-46.4453238,
 "endereco"
 ],
 "Rua Orobó, 856": [
@@ -7237,6 +7358,7 @@
 -46.681417,
 "endereco"
 ],
+"Rua Professor Leonidio Alegretti, 602": null,
 "Rua Professor Miguel Russiano, 404": [
 -23.5366291,
 -46.5443289,
@@ -7498,6 +7620,8 @@
 -46.723695,
 "endereco"
 ],
+"Rua San Gennaro, 115": null,
+"Rua San Gennaro, 116": null,
 "Rua San Gennaro, 34": null,
 "Rua Santa Abina, 119": null,
 "Rua Santa Cirila, 102": [
@@ -7685,6 +7809,16 @@
 "Rua Serra de Jairé, 256": [
 -23.545507,
 -46.587598,
+"endereco"
+],
+"Rua Serra de Paracaína, 187": [
+-23.5612394,
+-46.6148687,
+"endereco"
+],
+"Rua Serra de Paracaína, 680": [
+-23.5595369,
+-46.6098683,
 "endereco"
 ],
 "Rua Serra de Santa Marta": [
@@ -8003,6 +8137,11 @@
 -46.642736,
 "endereco"
 ],
+"Rua Tenora Catalã, 1": [
+-23.5927719,
+-46.4349917,
+"endereco"
+],
 "Rua Teodoro Cabral": [
 -23.6629399,
 -46.6516973,
@@ -8076,6 +8215,7 @@
 -46.5558288,
 "endereco"
 ],
+"Rua Tsutomu Henni, 168": null,
 "Rua Ttcel Jose Machado de Oliveira, 25": null,
 "Rua Tte Ary Rauen, 291": null,
 "Rua Tucuna, 824": [
@@ -8268,6 +8408,11 @@
 -46.5650742,
 "endereco"
 ],
+"Rua Visconde de Inhaúma, 561": [
+-23.689052,
+-46.6322134,
+"endereco"
+],
 "Rua Visconde de Inhomerim, 324": [
 -23.5629896,
 -46.6011126,
@@ -8388,6 +8533,11 @@
 "Rua Zacarias de Gois, 2176": [
 -23.630806,
 -46.678682,
+"endereco"
+],
+"Rua da Consolação, 860": [
+-23.5479895,
+-46.649789,
 "endereco"
 ],
 "Rua da Figueira, 925": [
@@ -8614,6 +8764,16 @@
 "Rua dos Milagres, 56": [
 -23.6360298,
 -46.7780352,
+"endereco"
+],
+"Rua dos Pescadores, 135": [
+-23.5594466,
+-46.6170292,
+"endereco"
+],
+"Rua dos Pescadores, 222": [
+-23.5594466,
+-46.6170292,
 "endereco"
 ],
 "Rua dos Professores, 692": [
