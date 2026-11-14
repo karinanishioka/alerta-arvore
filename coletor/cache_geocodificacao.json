@@ -147,6 +147,11 @@
 -46.513564,
 "endereco"
 ],
+"Avenida Angelica, 1399": [
+-23.5451917,
+-46.6570348,
+"endereco"
+],
 "Avenida Angélica": [
 -23.5342126,
 -46.6535071,
@@ -183,6 +188,11 @@
 "endereco"
 ],
 "Avenida Atos Tomás Ferraciú, 160": null,
+"Avenida Baronesa de Muritiba, 55": [
+-23.6236787,
+-46.4712463,
+"endereco"
+],
 "Avenida Belarmino Ferreira, 16": [
 -23.5590164,
 -46.5101246,
@@ -1759,6 +1769,11 @@
 -46.7478059,
 "endereco"
 ],
+"Rua Afonso Celso, 1659": [
+-23.6063114,
+-46.6351538,
+"endereco"
+],
 "Rua Afonso Lopes Vieira": [
 -23.464475,
 -46.664593,
@@ -1872,6 +1887,11 @@
 "Rua Alexandre Dumas, 1300": [
 -23.6322215,
 -46.7034978,
+"endereco"
+],
+"Rua Alexandre Porto, 265": [
+-23.5167968,
+-46.5122217,
 "endereco"
 ],
 "Rua Almeida Filho, 112": [
@@ -3806,6 +3826,11 @@
 "Rua Doutor Albuquerque Lins, 268": [
 -23.532991,
 -46.654497,
+"endereco"
+],
+"Rua Doutor Albuquerque Lins, 40": [
+-23.5314079,
+-46.6527344,
 "endereco"
 ],
 "Rua Doutor Albuquerque Lins, 804": [
@@ -7569,6 +7594,11 @@
 -46.744449,
 "endereco"
 ],
+"Rua Roberto, 44": [
+-23.4107532,
+-46.4982188,
+"endereco"
+],
 "Rua Rodesia, 256": [
 -23.5515926,
 -46.6913412,
@@ -8349,6 +8379,7 @@
 -46.7629085,
 "endereco"
 ],
+"Rua Valdir Padovan, 90": null,
 "Rua Valter Nazareno Giovanetti, 176": [
 -23.590084,
 -46.553083,
