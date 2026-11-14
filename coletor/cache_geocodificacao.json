@@ -1784,6 +1784,16 @@
 -46.603762,
 "endereco"
 ],
+"Rua Agreste de Itabaiana, 374": [
+-23.524737,
+-46.486447,
+"endereco"
+],
+"Rua Agreste de Itabaiana, 394": [
+-23.524737,
+-46.486447,
+"endereco"
+],
 "Rua Agripiano Barros, 242": [
 -23.431686,
 -46.721079,
@@ -2867,6 +2877,7 @@
 -46.7560854,
 "rua"
 ],
+"Rua Campos da Pitanueiras, 600": null,
 "Rua Camé, 1000": [
 -23.566746,
 -46.594096,
@@ -2905,6 +2916,11 @@
 "Rua Canori, 190": [
 -23.6290521,
 -46.7556372,
+"endereco"
+],
+"Rua Canumá, 660": [
+-23.6364649,
+-46.6886991,
 "endereco"
 ],
 "Rua Canuto Saraiva, 452": [
@@ -5248,6 +5264,11 @@
 -46.7668828,
 "endereco"
 ],
+"Rua Itajubá, 230": [
+-23.5521158,
+-46.6692794,
+"endereco"
+],
 "Rua Italva, 400": [
 -23.6243898,
 -46.605163,
@@ -5718,6 +5739,11 @@
 "Rua João Álvares Soares, 10": [
 -23.626387,
 -46.6760189,
+"endereco"
+],
+"Rua Juari, 323": [
+-23.6862321,
+-46.6848697,
 "endereco"
 ],
 "Rua Juca Mendes, 3062": [
@@ -7007,6 +7033,11 @@
 -46.5471133,
 "endereco"
 ],
+"Rua Pascal, 1693": [
+-23.6222314,
+-46.669954,
+"endereco"
+],
 "Rua Pascoal Gomes de Lima, 265": [
 -23.447586,
 -46.613705,
@@ -7226,6 +7257,11 @@
 -46.6352036,
 "endereco"
 ],
+"Rua Pires de Oliveira, 35": [
+-23.6374962,
+-46.7067408,
+"endereco"
+],
 "Rua Pires de Oliveira, 356": [
 -23.6363805,
 -46.7027488,
@@ -7305,6 +7341,11 @@
 "Rua Presidente Batista Pereira, 315": [
 -23.5672131,
 -46.605294,
+"endereco"
+],
+"Rua Presidente Horacio Vasquez, 103": [
+-23.49563,
+-46.4724786,
 "endereco"
 ],
 "Rua Presidente Soares Brandão, 10": [
@@ -7471,6 +7512,11 @@
 "endereco"
 ],
 "Rua Renato Bellanti, 100": [
+-23.637141,
+-46.7099525,
+"endereco"
+],
+"Rua Renato Bellanti, 90": [
 -23.637141,
 -46.7099525,
 "endereco"
@@ -7652,6 +7698,11 @@
 "Rua Santa Luzia, 21": [
 -23.4355518,
 -46.5783309,
+"endereco"
+],
+"Rua Santa Madalena, 376": [
+-23.6443985,
+-46.5813931,
 "endereco"
 ],
 "Rua Santa Marcelina, 509": [
@@ -8545,6 +8596,11 @@
 -46.6252326,
 "endereco"
 ],
+"Rua da Fraternidade, 385": [
+-23.6433533,
+-46.6952531,
+"endereco"
+],
 "Rua da Fraternidade, 409": [
 -23.6433533,
 -46.6952531,
@@ -8784,6 +8840,11 @@
 "Rua Álvaro Afonso, 400": [
 -23.6733542,
 -46.6900126,
+"endereco"
+],
+"Travessa Egeni Adad Colaço, 33": [
+-23.5175689,
+-46.5140492,
 "endereco"
 ],
 "Travessa Gerônimo Espejo, 126": [
