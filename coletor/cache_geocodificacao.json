@@ -2831,6 +2831,11 @@
 -46.54474,
 "endereco"
 ],
+"Rua Bélgica, 522": [
+-23.6344511,
+-46.5258287,
+"endereco"
+],
 "Rua Caa-açu, 263": [
 -23.5478484,
 -46.5922058,
@@ -4596,6 +4601,11 @@
 -46.6238646,
 "endereco"
 ],
+"Rua Francisco Medeiros Jordão, 628": [
+-23.4952656,
+-46.5869173,
+"endereco"
+],
 "Rua Francisco Narcizo, 100": [
 -23.4614479,
 -46.6252231,
@@ -5484,6 +5494,11 @@
 -46.6746343,
 "endereco"
 ],
+"Rua Joaquim Oliveira Freitas, 250": [
+-23.4999838,
+-46.7464898,
+"endereco"
+],
 "Rua Joaquim Piza, 80": [
 -23.564649,
 -46.626622,
@@ -5507,6 +5522,11 @@
 "Rua Joaquim de Oliveira Freitas, 1177": [
 -23.50608,
 -46.74703,
+"endereco"
+],
+"Rua Joerg Bruder, 53": [
+-23.6248035,
+-46.7002791,
 "endereco"
 ],
 "Rua Joinville, 386": [
@@ -6342,6 +6362,7 @@
 -46.6966085,
 "endereco"
 ],
+"Rua Marechal Hasmphilo de Moura": null,
 "Rua Marechal Hasmphilo de Moura, 338": null,
 "Rua Marechal Hastimphilo de Moura, 301": [
 -23.61539,
@@ -7399,6 +7420,11 @@
 -46.6742777,
 "endereco"
 ],
+"Rua Professor Brito Machado": [
+-23.5334928,
+-46.4507992,
+"rua"
+],
 "Rua Professor Brito Machado, 36": [
 -23.5334928,
 -46.4507992,
@@ -7748,6 +7774,11 @@
 "Rua Santana do Araguaia, 32": [
 -23.5861214,
 -46.5598607,
+"endereco"
+],
+"Rua Santana dos Olhos D'água, 44": [
+-23.5614733,
+-46.4219001,
 "endereco"
 ],
 "Rua Santo Alexandre, 240": [
@@ -8329,9 +8360,19 @@
 -46.6387116,
 "endereco"
 ],
+"Rua Tupuju, 140": [
+-23.5327799,
+-46.7569924,
+"endereco"
+],
 "Rua Turiassu, 507": [
 -23.533374,
 -46.6680174,
+"endereco"
+],
+"Rua Turquia, 510": [
+-23.6658651,
+-46.6061562,
 "endereco"
 ],
 "Rua Uacari, 173": [
@@ -8873,6 +8914,7 @@
 -46.6900126,
 "endereco"
 ],
+"Rua Álvaro Ramos, 950": null,
 "Travessa Egeni Adad Colaço, 33": [
 -23.5175689,
 -46.5140492,
