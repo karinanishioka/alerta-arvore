@@ -1087,6 +1087,11 @@
 "rua"
 ],
 "Avenida Nazaré Sentido Centro-bairro, 1": null,
+"Avenida Nicolau Jacinto, 685": [
+-23.5259169,
+-46.481552,
+"endereco"
+],
 "Avenida Nossa Senhora do Sabará, 1373": [
 -23.6624986,
 -46.692673,
@@ -1817,6 +1822,11 @@
 "Praça Graciliano Ramos": [
 -23.596607,
 -46.62721,
+"rua"
+],
+"Praça Hélio Ansaldo": [
+-23.5621436,
+-46.6225126,
 "rua"
 ],
 "Praça Ibrahim Nobre, 1": [
@@ -2580,6 +2590,11 @@
 -46.6467225,
 "endereco"
 ],
+"Rua Antônio Zouro, 145": [
+-23.671394,
+-46.6771395,
+"endereco"
+],
 "Rua Anésia Maria, 202": [
 -23.500551,
 -46.712149,
@@ -2786,6 +2801,11 @@
 "Rua Atimba, 164": [
 -23.5414038,
 -46.7069767,
+"endereco"
+],
+"Rua Atos Damasceno, 500": [
+-23.6488826,
+-46.6560322,
 "endereco"
 ],
 "Rua Attílio Ceccarelli, 1": null,
@@ -3738,6 +3758,11 @@
 "endereco"
 ],
 "Rua Conceição da Brejauba, 76": [
+-23.516633,
+-46.5006252,
+"rua"
+],
+"Rua Conceição da Brejauba, 955": [
 -23.516633,
 -46.5006252,
 "rua"
@@ -5183,6 +5208,11 @@
 -46.724233,
 "endereco"
 ],
+"Rua Fortunato Simões, 277": [
+-23.4792064,
+-46.7038027,
+"endereco"
+],
 "Rua Foz do Jordão, 16": [
 -23.5364581,
 -46.5003094,
@@ -6387,6 +6417,11 @@
 "Rua José Augusto Lobo, 54": [
 -23.5141806,
 -46.4190675,
+"endereco"
+],
+"Rua José Bento, 145": [
+-23.5635536,
+-46.6165013,
 "endereco"
 ],
 "Rua José Bonifácio Filho, 301": [
@@ -7721,6 +7756,7 @@
 -46.5350305,
 "endereco"
 ],
+"Rua Nossa Senhora de Lurdes, 180": null,
 "Rua Nossa Sra. das Dores, 350": null,
 "Rua Nossa Sra. de Fátima, 405": null,
 "Rua Nova Bassamo, 78": [
@@ -8525,6 +8561,11 @@
 "endereco"
 ],
 "Rua Renato Rinald, 1426": null,
+"Rua Reverendo Miguel Rizzo Júnior, 35": [
+-23.6100282,
+-46.714066,
+"endereco"
+],
 "Rua Ribeiro de Lima, 433": [
 -23.5314229,
 -46.6370435,
@@ -9130,6 +9171,11 @@
 "Rua São José do Campestre, 19": [
 -23.4973426,
 -46.507963,
+"endereco"
+],
+"Rua São José do Rio Preto, 17": [
+-23.7562709,
+-46.6808856,
 "endereco"
 ],
 "Rua São João": [
@@ -9984,6 +10030,11 @@
 "Rua dos Professores, 692": [
 -23.5001315,
 -46.5219781,
+"endereco"
+],
+"Rua dos Sitiantes, 153": [
+-23.4911184,
+-46.691298,
 "endereco"
 ],
 "Rua Álvaro Afonso, 400": [
