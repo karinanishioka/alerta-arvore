@@ -1958,6 +1958,11 @@
 -46.52245,
 "endereco"
 ],
+"Praça Professor Mário Bulcão": [
+-23.6073791,
+-46.5632422,
+"rua"
+],
 "Praça Professor Mário Bulcão, 157": [
 -23.6067909,
 -46.5636325,
@@ -3428,6 +3433,11 @@
 "Rua Canori, 190": [
 -23.6290521,
 -46.7556372,
+"endereco"
+],
+"Rua Canuma, 793": [
+-23.6364649,
+-46.6886991,
 "endereco"
 ],
 "Rua Canumá, 660": [
@@ -6240,6 +6250,11 @@
 -46.593359,
 "endereco"
 ],
+"Rua Joao Candido de Lima, 168": [
+-23.5165604,
+-46.4882672,
+"endereco"
+],
 "Rua Joao Moreira, 441": [
 -23.506649,
 -46.732486,
@@ -8475,6 +8490,11 @@
 -23.5608293,
 -46.6545535,
 "endereco"
+],
+"Rua Professor Pinheiro Domingues": [
+-23.5180013,
+-46.4965433,
+"rua"
 ],
 "Rua Professor Rodolfo Sao Tiago, 100": [
 -23.539139,
