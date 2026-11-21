@@ -1984,6 +1984,7 @@
 -46.650081,
 "endereco"
 ],
+"Praça Rogério Marcus Zakka": null,
 "Praça Salvador Rocco": null,
 "Praça Sanap": null,
 "Praça São Gervásio": [
@@ -2168,6 +2169,11 @@
 "Rua Alberto I, 199": [
 -23.62739,
 -46.59939,
+"endereco"
+],
+"Rua Albuquerque Maranhão, 24": [
+-23.5643486,
+-46.6218281,
 "endereco"
 ],
 "Rua Alcino Fidelis, 399": [
@@ -2588,6 +2594,11 @@
 "Rua Antônio Madi, 43": [
 -23.6411777,
 -46.6467225,
+"endereco"
+],
+"Rua Antônio Tavares, 275": [
+-23.5715266,
+-46.623861,
 "endereco"
 ],
 "Rua Antônio Zouro, 145": [
@@ -3927,6 +3938,11 @@
 -46.64895,
 "endereco"
 ],
+"Rua Coronel João de Oliveira Melo, 967": [
+-23.5762207,
+-46.5116748,
+"endereco"
+],
 "Rua Coronel Juvenal de Campos Castro, 162": [
 -23.643652,
 -46.593038,
@@ -4031,6 +4047,11 @@
 "Rua Crisólia, 397": [
 -23.4864794,
 -46.6780911,
+"endereco"
+],
+"Rua Croata, 731": [
+-23.534711,
+-46.705572,
 "endereco"
 ],
 "Rua Cruz das Almas, 100": [
@@ -6054,6 +6075,11 @@
 -46.652328,
 "endereco"
 ],
+"Rua Itamiami, 93": [
+-23.5960507,
+-46.6299604,
+"endereco"
+],
 "Rua Itapimirum": [
 -23.63308,
 -46.73313,
@@ -7634,6 +7660,11 @@
 -46.6497099,
 "endereco"
 ],
+"Rua Mário Amaral, 459": [
+-23.5740434,
+-46.6477054,
+"endereco"
+],
 "Rua Mário Augusto do Carmo, 319": [
 -23.586933,
 -46.569034,
@@ -8928,6 +8959,11 @@
 -46.5379928,
 "endereco"
 ],
+"Rua Senador Carlos Teixeira de Carvalho, 339": [
+-23.5690987,
+-46.623196,
+"endereco"
+],
 "Rua Senador Vergueiro, 243": [
 -23.678427,
 -46.544921,
@@ -9274,6 +9310,11 @@
 -46.535115,
 "endereco"
 ],
+"Rua Talmud Thorá, 296": [
+-23.5252594,
+-46.6388415,
+"endereco"
+],
 "Rua Talófitos, 16": [
 -23.478544,
 -46.728712,
@@ -9377,6 +9418,11 @@
 "endereco"
 ],
 "Rua Thomas Cyro Pozzi, 278": null,
+"Rua Thomas Deloney, 280": [
+-23.6314828,
+-46.6972217,
+"endereco"
+],
 "Rua Timóteo Correa de Góes, 30": null,
 "Rua Tiuba, 138": [
 -23.5420454,
@@ -9398,6 +9444,7 @@
 -46.584763,
 "rua"
 ],
+"Rua Toneleiro, 467": null,
 "Rua Torquato Neto, 191": [
 -23.548338,
 -46.620669,
