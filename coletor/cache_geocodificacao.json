@@ -1632,6 +1632,11 @@
 -46.6492783,
 "endereco"
 ],
+"Avenida dos Eucaliptos, 530": [
+-23.6081628,
+-46.6713963,
+"endereco"
+],
 "Avenida dos Poetas, 595": null,
 "Avenida Água Fria, 1926": [
 -23.4818039,
@@ -1852,6 +1857,11 @@
 "Praça José Francisco Imperatori, 167": [
 -23.5239159,
 -46.5199947,
+"rua"
+],
+"Praça José Luiz de Mello Malheiro": [
+-23.5561552,
+-46.6276534,
 "rua"
 ],
 "Praça José Luz, 108": [
@@ -2401,6 +2411,11 @@
 "Rua Andréa Paulinetti, 124": [
 -23.6266041,
 -46.6910314,
+"endereco"
+],
+"Rua Andrônico, 45": [
+-23.5832951,
+-46.6222914,
 "endereco"
 ],
 "Rua Angelina Maffei Vita, 280": [
@@ -5109,6 +5124,11 @@
 "endereco"
 ],
 "Rua Farol Paulistano-vila Oratório": null,
+"Rua Fausto Delduque, 45": [
+-23.6230396,
+-46.6792111,
+"endereco"
+],
 "Rua Fausto Delduque, 75": [
 -23.6230396,
 -46.6792111,
@@ -6170,6 +6190,11 @@
 -46.62867,
 "endereco"
 ],
+"Rua Jacatirão, 242": [
+-23.644896,
+-46.6831363,
+"endereco"
+],
 "Rua Jacina, 495": [
 -23.5025496,
 -46.5004331,
@@ -6989,6 +7014,11 @@
 "Rua Madeira, 11": [
 -23.530718,
 -46.624323,
+"endereco"
+],
+"Rua Madre Teodora, 259": [
+-23.5757916,
+-46.659989,
 "endereco"
 ],
 "Rua Madre de Deus, 1176": [
@@ -8406,6 +8436,11 @@
 -23.5024955,
 -46.7153759,
 "rua"
+],
+"Rua Princesa Isabel, 1513": [
+-23.6035275,
+-46.5938406,
+"endereco"
 ],
 "Rua Princesa Isabel, 534": [
 -23.621044,
